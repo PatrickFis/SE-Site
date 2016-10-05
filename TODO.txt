@@ -1,0 +1,1 @@
+I want to use the logout button that's on Main.php on the other web pages. I'll need to copy some code from Main.php and make new php pages instead of html ones. Will do later.
