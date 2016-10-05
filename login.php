@@ -74,7 +74,7 @@
       <a class="navbar-brand" href="#">Brentwood Leadership</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="/Main.html">Home</a></li>
+      <li><a href="/Main.php">Home</a></li>
       <li><a href="/calendar.html">Calendar</a></li>
       <li><a href="/contact.html">Contact Us</a></li>
       <li><a href="/donate.html">Donate</a></li>
