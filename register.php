@@ -2,7 +2,7 @@
  ob_start();
  session_start();
  if( isset($_SESSION['user'])!="" ){
-  header("Location: home.php");
+  header("Location: Main.php");
  }
  include_once 'dbconnect.php';
  $error = false;
