@@ -17,6 +17,7 @@ if(isset($_SESSION['user'])) {
 // Allow the user to change their password
 if(isset($_POST['btn-change'])) {
   // Get user details
+  echo "POSTED";
   $name = $userRow['username'];
   $email = $userRow['email'];
 
