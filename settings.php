@@ -5,7 +5,8 @@ require_once 'dbconnect.php';
 
 // if session is not set this will redirect to login page
 if( !isset($_SESSION['user']) ) {
-  // do nothing
+  header("Location: Main.php");
+  exit;
 }
 // select loggedin users detail
 if(isset($_SESSION['user'])) {
@@ -38,7 +39,7 @@ if(isset($_SESSION['user'])) {
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/Main.php">Home</a></li>
+          <li><a href="/Main.php">Home</a></li>
           <li><a href="/calendar.html">Calendar</a></li>
           <li><a href="/contact.html">Contact Us</a></li>
           <li><a href="/donate.html">Donate</a></li>
@@ -63,8 +64,7 @@ if(isset($_SESSION['user'])) {
     </nav>
     <div class="container">
       <div class="jumbotron">
-        <h1>Welcome to the Brentwood Leadership site</h1>
-        <p>This page is just a placeholder</p>
+        <h1>Placeholder for settings page</h1>
       </div>
     </div>
 
