@@ -116,7 +116,7 @@ if ( isset($_POST['btn-signup']) ) {
 
           <div class="form-group">
             <div class="input-group">
-              <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+              <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
               <input type="password" name="oldPass" class="form-control" placeholder="Password" maxlength="15" value="<?php echo $email ?>" />
             </div>
             <span class="text-danger"><?php echo $oldPassError; ?></span>
