@@ -1,84 +1,72 @@
 <?php
 ob_start();
 session_start();
-require_once 'dbconnect.php';
-$error = false;
-// if session is not set this will redirect to main page
-if( !isset($_SESSION['user']) ) {
+if( !isset($_SESSION['user'])!="" ){
   header("Location: Main.php");
-  exit;
 }
-// select loggedin users detail
-if(isset($_SESSION['user'])) {
+include_once 'dbconnect.php';
+$error = false;
+if ( isset($_POST['btn-signup']) ) {
+  // Fetch user data
   $res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
   $userRow=mysql_fetch_array($res);
-}
 
-// Allow the user to change their password
-if(isset($_POST['btn-change'])) {
-  // Get user details
-  echo "POSTED";
-  $name = $userRow['username'];
   $email = $userRow['email'];
-
-  // Clean up old password input to prevent SQL injections
-  $oldPass = trim($_POST['pwd']);
+  // clean user inputs to prevent sql injections
+  $oldPass = trim ($_POST['oldPass']);
   $oldPass = strip_tags($oldPass);
   $oldPass = htmlspecialchars($oldPass);
 
-  // Clean up new password input to prevent SQL injections
-  $newPass = trim($_POST['newPwd']);
-  $newPass = strip_tags($newPass);
-  $newPass = htmlspecialchars($newPass);
+  $pass = trim($_POST['pass']);
+  $pass = strip_tags($pass);
+  $pass = htmlspecialchars($pass);
 
-  // Check if password fields are empty
+  // password validation
+  $oldPass = hash('sha256', $oldPass);
   if(empty($oldPass)) {
     $error = true;
-    $oldError = "Please enter your old password.";
+    $oldPassError = "Please enter old password.";
   }
-  if(empty($newPass)) {
+  else if($oldPass != $userRow['password']) {
     $error = true;
-    $newError = "Please enter your new password.";
+    $oldPassError = "Incorrect password.";
   }
-  else if(strlen($newPass) < 8) {
+  if (empty($pass)){
     $error = true;
-    $newError = "Password must be have at least 8 characters.";
+    $passError = "Please enter password.";
+  } else if(strlen($pass) < 8) {
+    $error = true;
+    $passError = "Password must have atleast 8 characters.";
   }
 
-  // Encrypt both old and new password with SHA256().
-  $oldPass = hash('sha256', $oldPass);
-  $newPass = hash('sha256', $newPass);
+  // password encrypt using SHA256();
+  $password = hash('sha256', $pass);
 
-  // Make sure old password is correct.
-  $query = "SELECT id FROM Users where username='$name' AND email='$email' AND password='$oldPass'";
-  $res = mysql_query($query);
-  if($count == 0) {
-    $error = true;
-    $oldError = "Password incorrect.";
-  }
-  // If there is no error change the password.
-  if(!$error) {
-    $query = "UPDATE Users SET password='$newPass' WHERE email='$email'";
+  // if there's no error, continue to signup
+  if( !$error ) {
+
+    $query = "UPDATE Users SET password='$password' WHERE email='$email'";
     $res = mysql_query($query);
-    if($res) {
+    if ($res) {
       $errTyp = "success";
-      $errMSG = "Changed password.";
-      unset($name);
+      $errMSG = "Successfully changed password";
       unset($email);
       unset($oldPass);
-      unset($newPass);
-    }
-    else {
+      unset($pass);
+    } else {
       $errTyp = "danger";
       $errMSG = "Something went wrong, try again later...";
     }
+
   }
+
+
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Homepage</title>
+  <title>Register</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -86,61 +74,81 @@ if(isset($_POST['btn-change'])) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
   <nav class="navbar navbar-inverse">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
         <a class="navbar-brand" href="#">Brentwood Leadership</a>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="/Main.php">Home</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-          <li><a href="/donate.html">Donate</a></li>
-          <li><a href="/login.php">Login</a></li>
-          <li><a href="/register.php">Register</a></li>
-        </ul>
-        <?php if(isset($_SESSION['user'])): ?>
-          <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav">
+        <li><a href="/Main.php">Home</a></li>
+        <li><a href="/calendar.html">Calendar</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/donate.html">Donate</a></li>
+        <li><a href="/login.php">Login</a></li>
+        <li class="active"><a href="/register.php">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
 
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <span class="glyphicon glyphicon-user"></span>&nbsp;Hi <?php echo $userRow['email']; ?>&nbsp;<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="settings.php"><span class="glyphicon glyphicon-wrench"></span>&nbsp;Settings</a></li>
-                  <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
-                </ul>
-              </li>
-            </ul>
-          <?php endif; ?>
-        </div><!--/.nav-collapse -->
-      </div>
-    </nav>
-    <form>
-      <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd">
-      </div>
-      <div class="form-group">
-        <label for="newPwd">New Password:</label>
-        <input type="password" class="form-control" id="newPwd">
-      </div>
-      <button type="submit" class="btn btn-default" name="btn-change">Submit</button>
-    </form>
+    <div id="login-form">
+      <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+
+        <div class="col-md-12">
+
+          <div class="form-group">
+            <hr />
+          </div>
+
+          <?php
+          if ( isset($errMSG) ) {
+
+            ?>
+            <div class="form-group">
+              <div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
+                <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
+              </div>
+            </div>
+            <?php
+          }
+          ?>
 
 
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+              <input type="password" name="oldPass" class="form-control" placeholder="Password" maxlength="15" value="<?php echo $email ?>" />
+            </div>
+            <span class="text-danger"><?php echo $oldPassError; ?></span>
+          </div>
 
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+              <input type="password" name="pass" class="form-control" placeholder="New Password" maxlength="15" />
+            </div>
+            <span class="text-danger"><?php echo $passError; ?></span>
+          </div>
 
-    <script src="assets/jquery-1.11.3-jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+          <div class="form-group">
+            <hr />
+          </div>
 
-  </body>
-  </html>
-  <?php ob_end_flush(); ?>
+          <div class="form-group">
+            <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Change Password</button>
+          </div>
+
+          <div class="form-group">
+            <hr />
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+</body>
+</html>
+<?php ob_end_flush(); ?>
