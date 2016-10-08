@@ -63,8 +63,14 @@ if(isset($_SESSION['user'])) {
       </div>
     </nav>
     <div class="container">
-      <div class="jumbotron">
-        <h1>Placeholder for settings page</h1>
+      <p>Change password:</p>
+      <div class="form-group">
+        <label for="pwd">Current Password:</label>
+        <input type="password" class="form-control" id="pwd">
+      </div>
+      <div class="form-group">
+        <label for="newPwd">New Password:</label>
+        <input type="password" class="form-control" id="pwd">
       </div>
     </div>
 
