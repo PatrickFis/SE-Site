@@ -6,11 +6,10 @@ if( !isset($_SESSION['user'])!="" ){
 }
 include_once 'dbconnect.php';
 $error = false;
+$res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
+$userRow=mysql_fetch_array($res);
 if ( isset($_POST['btn-signup']) ) {
   // Fetch user data
-  $res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
-  $userRow=mysql_fetch_array($res);
-
   $email = $userRow['email'];
   // clean user inputs to prevent sql injections
   $oldPass = trim ($_POST['oldPass']);
