@@ -39,7 +39,7 @@ if(isset($_SESSION['user'])) {
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li><a href="/Main.php">Home</a></li>
-          <li class="active"><a href="/calendar.html">Calendar</a></li>
+          <li class="active"><a href="/calendar.php">Calendar</a></li>
           <li><a href="/contact.html">Contact Us</a></li>
           <li><a href="/donate.html">Donate</a></li>
           <li><a href="/login.php">Login</a></li>
