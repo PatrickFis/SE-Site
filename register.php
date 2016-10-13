@@ -107,7 +107,7 @@
         <ul class="nav navbar-nav">
           <li><a href="/Main.php">Home</a></li>
           <li><a href="/calendar.php">Calendar</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
+          <li><a href="/contact.php">Contact Us</a></li>
           <li><a href="/donate.php">Donate</a></li>
           <li><a href="/login.php">Login</a></li>
           <li clsas = "active"><a href="/register.php">Register</a></li>
