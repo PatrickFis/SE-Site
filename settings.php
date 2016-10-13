@@ -87,9 +87,9 @@ if ( isset($_POST['btn-signup']) ) {
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="/Main.php">Home</a></li>
-          <li><a href="/calendar.html">Calendar</a></li>
-          <li><a href="/contact.html">Contact Us</a></li>
-          <li><a href="/donate.html">Donate</a></li>
+          <li><a href="/calendar.php">Calendar</a></li>
+          <li><a href="/contact.php">Contact Us</a></li>
+          <li><a href="/donate.php">Donate</a></li>
           <li><a href="/login.php">Login</a></li>
           <li><a href="/register.php">Register</a></li>
         </ul>

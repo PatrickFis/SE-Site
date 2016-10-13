@@ -14,9 +14,9 @@ if(isset($_SESSION['user'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Homepage</title>
+  <title>Contact Us</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -24,7 +24,6 @@ if(isset($_SESSION['user'])) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
@@ -38,9 +37,9 @@ if(isset($_SESSION['user'])) {
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/Main.php">Home</a></li>
+          <li><a href="/Main.php">Home</a></li>
           <li><a href="/calendar.php">Calendar</a></li>
-          <li><a href="/contact.php">Contact Us</a></li>
+          <li class="active"><a href="/contact.php">Contact Us</a></li>
           <li><a href="/donate.php">Donate</a></li>
           <li><a href="/login.php">Login</a></li>
           <li><a href="/register.php">Register</a></li>
@@ -61,19 +60,5 @@ if(isset($_SESSION['user'])) {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Welcome to the Brentwood Leadership site</h1>
-        <p>This page is just a placeholder</p>
-      </div>
-    </div>
-
-
-
-
-    <script src="assets/jquery-1.11.3-jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
-  </body>
-  </html>
-  <?php ob_end_flush(); ?>
+</body>
+</html>
