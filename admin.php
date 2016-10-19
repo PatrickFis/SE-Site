@@ -10,9 +10,9 @@ $res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
 $adminRes=mysql_query("SELECT * FROM admin WHERE idadmin="$userRow['idUsers']); // Check if current user is an admin
 $adminRow=mysql_fetch_array($adminRes);
-if(!adminRow['idadmin']) {
-  header("Location: Main.php"); // Don't let non-admins on this page.
-}
+// if(!adminRow['idadmin']) {
+//   header("Location: Main.php"); // Don't let non-admins on this page.
+// }
 ?>
 <!DOCTYPE html>
 <html>
