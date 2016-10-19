@@ -48,7 +48,7 @@ if(isset($_SESSION['user'])) {
           <?php if(!isset($_SESSION['user'])): ?> <!-- Hides these two buttons if logged in. -->
           <li><a href="/login.php">Login</a></li>
           <li><a href="/register.php">Register</a></li>
-          <?php if($adminRow['isadmin'] != ""): ?>
+          <?php if($adminRow['isadmin'] == '1'): ?>
             <li><a href="/admin.php">Admin</a></li>
           <?php endif; ?>
         <?php endif; ?>
