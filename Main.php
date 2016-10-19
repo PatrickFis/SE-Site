@@ -24,6 +24,7 @@ if(isset($_SESSION['user'])) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <?php include_once("analyticstracking.php") ?>
 
   <nav class="navbar navbar-inverse">
     <div class="container">
