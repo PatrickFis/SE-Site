@@ -62,8 +62,6 @@
   <title>Login</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://apis.google.com/js/platform.js" async defer></script> <!-- Google sign in -->
-  <meta name="google-signin-client_id" content="734686445061-9kf59997o88nfdj9sgc8b63a9q3h4gsc.apps.googleusercontent.com">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -141,28 +139,7 @@
             <div class="form-group">
              <hr />
             </div>
-            <div id="my-signin2"></div>
-  <script>
-    function onSuccess(googleUser) {
-      console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-    }
-    function onFailure(error) {
-      console.log(error);
-    }
-    function renderButton() {
-      gapi.signin2.render('my-signin2', {
-        'scope': 'profile email',
-        'width': 240,
-        'height': 50,
-        'longtitle': true,
-        'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
-      });
-    }
-  </script>
 
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
             <div class="form-group">
              <a href="register.php">Sign Up Here...</a>
             </div>
