@@ -62,6 +62,8 @@
   <title>Login</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="734686445061-9kf59997o88nfdj9sgc8b63a9q3h4gsc.apps.googleusercontent.com">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -139,7 +141,7 @@
             <div class="form-group">
              <hr />
             </div>
-
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
             <div class="form-group">
              <a href="register.php">Sign Up Here...</a>
             </div>
