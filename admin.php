@@ -8,56 +8,6 @@ include_once 'dbconnect.php';
 $error = false;
 $res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
-if ( isset($_POST['btn-signup']) ) {
-  // Fetch user data
-  $email = $userRow['email'];
-  // clean user inputs to prevent sql injections
-  $oldPass = trim ($_POST['oldPass']);
-  $oldPass = strip_tags($oldPass);
-  $oldPass = htmlspecialchars($oldPass);
-
-  $pass = trim($_POST['pass']);
-  $pass = strip_tags($pass);
-  $pass = htmlspecialchars($pass);
-
-  // password validation
-  $oldPass = hash('sha256', $oldPass);
-  if(empty($oldPass)) {
-    $error = true;
-    $oldPassError = "Please enter old password.";
-  }
-  else if($oldPass != $userRow['password']) {
-    $error = true;
-    $oldPassError = "Incorrect password.";
-  }
-  if (empty($pass)){
-    $error = true;
-    $passError = "Please enter password.";
-  } else if(strlen($pass) < 8) {
-    $error = true;
-    $passError = "Password must have atleast 8 characters.";
-  }
-
-  // password encrypt using SHA256();
-  $password = hash('sha256', $pass);
-
-  // if there's no error, continue to signup
-  if( !$error ) {
-
-    $query = "UPDATE Users SET password='$password' WHERE email='$email'";
-    $res = mysql_query($query);
-    if ($res) {
-      $errTyp = "success";
-      $errMSG = "Successfully changed password";
-      unset($email);
-      unset($oldPass);
-      unset($pass);
-    } else {
-      $errTyp = "danger";
-      $errMSG = "Something went wrong, try again later...";
-    }
-
-  }
 
 
 }
@@ -109,7 +59,6 @@ if ( isset($_POST['btn-signup']) ) {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-  
 
   </div>
 
