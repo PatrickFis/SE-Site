@@ -109,63 +109,7 @@ if ( isset($_POST['btn-signup']) ) {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-  <div class="container">
-
-    <div id="login-form">
-      <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-
-        <div class="col-md-12">
-
-          <div class="form-group">
-            <hr />
-          </div>
-
-          <?php
-          if ( isset($errMSG) ) {
-
-            ?>
-            <div class="form-group">
-              <div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
-                <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
-              </div>
-            </div>
-            <?php
-          }
-          ?>
-
-
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-              <input type="password" name="oldPass" class="form-control" placeholder="Password" maxlength="15" value="<?php echo $email ?>" />
-            </div>
-            <span class="text-danger"><?php echo $oldPassError; ?></span>
-          </div>
-
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-              <input type="password" name="pass" class="form-control" placeholder="New Password" maxlength="15" />
-            </div>
-            <span class="text-danger"><?php echo $passError; ?></span>
-          </div>
-
-          <div class="form-group">
-            <hr />
-          </div>
-
-          <div class="form-group">
-            <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Change Password</button>
-          </div>
-
-          <div class="form-group">
-            <hr />
-          </div>
-
-        </div>
-
-      </form>
-    </div>
+  
 
   </div>
 
