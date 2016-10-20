@@ -1,7 +1,7 @@
 <?php
  session_start();
  if (!isset($_SESSION['user'])) {
-  header("Location: Main.html");
+  header("Location: Main.php");
  } else if(isset($_SESSION['user'])!="") {
   header("Location: Main.php");
  }
