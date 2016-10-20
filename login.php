@@ -70,7 +70,7 @@ function onSignIn(googleUser) {
   xhr.onload = function() {
   console.log('Signed in as: ' + xhr.responseText);
 };
-  xhr.send('idtoken=' + id_token);
+  xhr.send('id=' + id_token);
 }
 </script>
 <!DOCTYPE html>
