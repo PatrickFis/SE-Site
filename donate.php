@@ -25,6 +25,7 @@ if(isset($_SESSION['user'])) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <?php include_once("analyticstracking.php") ?>
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
@@ -42,8 +43,10 @@ if(isset($_SESSION['user'])) {
           <li><a href="/calendar.php">Calendar</a></li>
           <li><a href="/contact.php">Contact Us</a></li>
           <li class="active"><a href="/donate.php">Donate</a></li>
+          <?php if(!isset($_SESSION['user'])): ?> <!-- Hides these two buttons if logged in. -->
           <li><a href="/login.php">Login</a></li>
           <li><a href="/register.php">Register</a></li>
+        <?php endif; ?>
         </ul>
         <?php if(isset($_SESSION['user'])): ?>
           <ul class="nav navbar-nav navbar-right">

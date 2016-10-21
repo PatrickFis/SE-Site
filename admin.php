@@ -1,22 +1,23 @@
 <?php
 ob_start();
 session_start();
-require_once 'dbconnect.php';
-
-// if session is not set this will redirect to login page
-if( !isset($_SESSION['user']) ) {
-  // do nothing
+if( !isset($_SESSION['user'])!="" ){
+  header("Location: Main.php");
 }
-// select loggedin users detail
-if(isset($_SESSION['user'])) {
-  $res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
-  $userRow=mysql_fetch_array($res);
+include_once 'dbconnect.php';
+$error = false;
+$res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
+$userRow=mysql_fetch_array($res);
+$adminRes=mysql_query("SELECT * FROM admin WHERE idadmin=".$userRow['idUsers']);
+$adminRow=mysql_fetch_array($adminRes); // Check to see if current user is an admin
+if($adminRow['idadmin'] == "") {
+  header("Location: Main.php");
 }
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Homepage</title>
+  <title>Register</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -25,7 +26,6 @@ if(isset($_SESSION['user'])) {
 </head>
 <body>
   <?php include_once("analyticstracking.php") ?>
-
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="navbar-header">
@@ -39,8 +39,8 @@ if(isset($_SESSION['user'])) {
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="/Main.php">Home</a></li>
-          <li class="active"><a href="/calendar.php">Calendar</a></li>
+          <li class="active"><a href="/Main.php">Home</a></li>
+          <li><a href="/calendar.php">Calendar</a></li>
           <li><a href="/contact.php">Contact Us</a></li>
           <li><a href="/donate.php">Donate</a></li>
           <?php if(!isset($_SESSION['user'])): ?> <!-- Hides these two buttons if logged in. -->
@@ -55,6 +55,7 @@ if(isset($_SESSION['user'])) {
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <span class="glyphicon glyphicon-user"></span>&nbsp;Hi <?php echo $userRow['email']; ?>&nbsp;<span class="caret"></span></a>
                 <ul class="dropdown-menu">
+                  <li><a href="settings.php"><span class="glyphicon glyphicon-wrench"></span>&nbsp;Settings</a></li>
                   <li><a href="logout.php?logout"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Sign Out</a></li>
                 </ul>
               </li>
@@ -63,17 +64,9 @@ if(isset($_SESSION['user'])) {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-	<div>
-        <div align="middle">
-                <iframe src="https://calendar.google.com/calendar/embed?src=pg9hhem2ehkoml4mstqtaqmu5s%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>
-        </div>
-</div>
 
+  </div>
 
-
-    <script src="assets/jquery-1.11.3-jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
-  </body>
-  </html>
-  <?php ob_end_flush(); ?>
+</body>
+</html>
+<?php ob_end_flush(); ?>

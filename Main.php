@@ -11,6 +11,8 @@ if( !isset($_SESSION['user']) ) {
 if(isset($_SESSION['user'])) {
   $res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
   $userRow=mysql_fetch_array($res);
+  $adminRes=mysql_query("SELECT * FROM admin WHERE idadmin=".$userRow['idUsers']);
+  $adminRow=mysql_fetch_array($adminRes); // Check to see if current user is an admin
 }
 ?>
 <!DOCTYPE html>
@@ -24,6 +26,7 @@ if(isset($_SESSION['user'])) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <?php include_once("analyticstracking.php") ?>
 
   <nav class="navbar navbar-inverse">
     <div class="container">
@@ -42,8 +45,13 @@ if(isset($_SESSION['user'])) {
           <li><a href="/calendar.php">Calendar</a></li>
           <li><a href="/contact.php">Contact Us</a></li>
           <li><a href="/donate.php">Donate</a></li>
+          <?php if(!isset($_SESSION['user'])): ?> <!-- Hides these two buttons if logged in. -->
           <li><a href="/login.php">Login</a></li>
           <li><a href="/register.php">Register</a></li>
+          <?php if($adminRow['isadmin'] == 1): ?>
+            <li><a href="/admin.php">Admin</a></li>
+          <?php endif; ?>
+        <?php endif; ?>
         </ul>
         <?php if(isset($_SESSION['user'])): ?>
           <ul class="nav navbar-nav navbar-right">
