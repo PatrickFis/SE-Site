@@ -13,20 +13,6 @@ if(isset($_SESSION['user'])) {
   $userRow=mysql_fetch_array($res);
 }
 
-$colors = $service->colors->get();
-
-// Print available calendarListEntry colors.
-foreach ($colors->getCalendar() as $key => $color) {
-  print "colorId : {$key}\n";
-  print "  Background: {$color->getBackground()}\n";
-  print "  Foreground: {$color->getForeground()}\n";
-}
-// Print available event colors.
-foreach ($colors->getEvent() as $key => $color) {
-  print "colorId : {$key}\n";
-  print "  Background: {$color->getBackground()}\n";
-  print "  Foreground: {$color->getForeground()}\n";
-}
 ?>
 <!DOCTYPE html>
 <html>
