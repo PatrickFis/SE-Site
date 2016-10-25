@@ -12,6 +12,7 @@ if(isset($_SESSION['user'])) {
   $res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
   $userRow=mysql_fetch_array($res);
 }
+
 ?>
 <!DOCTYPE html>
 <html>
