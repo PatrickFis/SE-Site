@@ -1,15 +1,6 @@
 Set up a LAMP stack using
 https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-14-04
 
-Set up PHP My Admin using
-https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-phpmyadmin-on-ubuntu-12-04
-
-Fixed PHP My Admin cannot access database issue using
-http://stackoverflow.com/questions/13357561/error-1045-cannot-log-in-to-mysql-server-phpmyadmin
-
-(DID NOT DO) Set up Wordpress using
-https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-on-ubuntu-14-04
-
 Created a git repo and pushed it to Github.
 
 SSH Keygen:

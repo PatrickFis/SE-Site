@@ -15,6 +15,7 @@ if(isset($_SESSION['user'])) {
   $adminRow=mysql_fetch_array($adminRes); // Check to see if current user is an admin
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
