@@ -66,7 +66,7 @@ if(isset($_SESSION['user'])) {
     </nav>
 	<div>
         <div align="middle">
-                <iframe src="https://calendar.google.com/calendar/embed?src=pg9hhem2ehkoml4mstqtaqmu5s%40group.calendar.google.com&ctz=America/Chicago" style="border: 0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>
+                <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&ctz=America/Chicago" style="border: 0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
 </div>
 
