@@ -181,6 +181,18 @@
                 <span class="text-danger"><?php echo $passError; ?></span>
             </div>
 
+            <!-- This is the secret question/answer portion of our site. -->
+            <div class="form-group">
+              <select class = "selectpicker">
+                <option name="opt1">What was the name of your first pet?</option>
+                <option name="opt2">What was the name of your best friend in high school?</option>
+              </select>
+              <div class="input-group">
+                 <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+              <input type="text" name="secretans" class="form-control" placeholder="Enter secret answer" maxlength="100" />
+                 </div>
+            </div>
+
             <div class="form-group">
              <hr />
             </div>

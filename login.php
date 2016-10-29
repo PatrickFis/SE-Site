@@ -156,12 +156,6 @@ function onSignIn(googleUser) {
             <button type="submit" class="btn btn-block btn-primary" name="btn-login">Sign In</button>
           </div>
           <div class="form-group">
-            <select class = "selectpicker">
-              <option name="opt1">What was the name of your first pet?</option>
-              <option name="opt2">What was the name of your best friend in high school?</option>
-            </select>
-          </div>
-          <div class="form-group">
             <hr />
           </div>
           <div class="g-signin2" data-onsuccess="onSignIn"></div>
