@@ -62,7 +62,7 @@
 
   // Checking if the user has supplied an answer to their secret question
 
-  if(empty($secretans)) {
+  if(empty($secretAns)) {
     $error = true;
     $secretError = "Please enter an answer.";
   }
