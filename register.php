@@ -64,7 +64,7 @@
 
   if(empty($secretans)) {
     $error = true;
-    $secretError = "Please enter an answer."
+    $secretError = "Please enter an answer.";
   }
   // password encrypt using SHA256();
   $password = hash('sha256', $pass);
