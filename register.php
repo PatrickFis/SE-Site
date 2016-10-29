@@ -72,7 +72,7 @@
   // if there's no error, continue to signup
   if( !$error ) {
    $selectOption = $_POST['questions']; // Get secret question
-   $query = "INSERT INTO Users(username,email,password,secretQuestion,secretAnswer) VALUES('$name','$email','$password','$selectOption','$secretans')";
+   $query = "INSERT INTO Users(username,email,password,secretQuestion,secretAnswer) VALUES('$name','$email','$password','$selectOption','$secretAns')";
    $res = mysql_query($query);
 
    if ($res) {
