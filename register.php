@@ -21,6 +21,10 @@
   $pass = strip_tags($pass);
   $pass = htmlspecialchars($pass);
 
+  $secretAns = trim($_POST['secretans']);
+  $secretAns = strip_tags($secretAns);
+  $secretAns = htmlspecialchars($secretAns);
+
   // basic name validation
   if (empty($name)) {
    $error = true;
@@ -56,13 +60,19 @@
    $passError = "Password must have atleast 8 characters.";
   }
 
+  // Checking if the user has supplied an answer to their secret question
+
+  if(empty($secretans)) {
+    $error = true;
+    $secretError = "Please enter an answer."
+  }
   // password encrypt using SHA256();
   $password = hash('sha256', $pass);
 
   // if there's no error, continue to signup
   if( !$error ) {
-
-   $query = "INSERT INTO Users(username,email,password) VALUES('$name','$email','$password')";
+   $selectOption = $_POST['questions']; // Get secret question
+   $query = "INSERT INTO Users(username,email,password,secretQuestion,secretAnswer) VALUES('$name','$email','$password','$selectOption','$secretans')";
    $res = mysql_query($query);
 
    if ($res) {
@@ -71,6 +81,7 @@
     unset($name);
     unset($email);
     unset($pass);
+    unset($secretans);
    } else {
     $errTyp = "danger";
     $errMSG = "Something went wrong, try again later...";
@@ -181,16 +192,18 @@
                 <span class="text-danger"><?php echo $passError; ?></span>
             </div>
 
-            <!-- This is the secret question/answer portion of our site. -->
+            <!-- This is the secret question/answer portion. -->
             <div class="form-group">
-              <select class = "selectpicker">
+              <select class = "selectpicker" name="questions">
                 <option name="opt1">What was the name of your first pet?</option>
                 <option name="opt2">What was the name of your best friend in high school?</option>
               </select>
+              <br/>
               <div class="input-group">
                  <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
               <input type="text" name="secretans" class="form-control" placeholder="Enter secret answer" maxlength="100" />
-                 </div>
+              </div>
+              <span class="text-danger"><?php echo $secretError; ?></span>
             </div>
 
             <div class="form-group">
