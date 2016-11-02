@@ -87,13 +87,13 @@ if ( isset($_POST['btn-signup']) ) {
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/Main.php">Home</a></li>
-          <li><a href="/calendar.php">Calendar</a></li>
-          <li><a href="/contact.php">Contact Us</a></li>
-          <li><a href="/donate.php">Donate</a></li>
+          <li class="active"><a href="Main.php">Home</a></li>
+          <li><a href="calendar.php">Calendar</a></li>
+          <li><a href="contact.php">Contact Us</a></li>
+          <li><a href="donate.php">Donate</a></li>
           <?php if(!isset($_SESSION['user'])): ?> <!-- Hides these two buttons if logged in. -->
-          <li><a href="/login.php">Login</a></li>
-          <li><a href="/register.php">Register</a></li>
+          <li><a href="login.php">Login</a></li>
+          <li><a href="register.php">Register</a></li>
         <?php endif; ?>
         </ul>
         <?php if(isset($_SESSION['user'])): ?>

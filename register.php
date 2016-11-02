@@ -117,12 +117,12 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="/Main.php">Home</a></li>
-          <li><a href="/calendar.php">Calendar</a></li>
-          <li><a href="/contact.php">Contact Us</a></li>
-          <li><a href="/donate.php">Donate</a></li>
-          <li><a href="/login.php">Login</a></li>
-          <li clsas = "active"><a href="/register.php">Register</a></li>
+          <li><a href="Main.php">Home</a></li>
+          <li><a href="calendar.php">Calendar</a></li>
+          <li><a href="contact.php">Contact Us</a></li>
+          <li><a href="donate.php">Donate</a></li>
+          <li><a href="login.php">Login</a></li>
+          <li clsas = "active"><a href="register.php">Register</a></li>
         </ul>
         <?php if(isset($_SESSION['user'])): ?>
           <ul class="nav navbar-nav navbar-right">

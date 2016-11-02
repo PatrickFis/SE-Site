@@ -89,17 +89,17 @@ function onSignIn(googleUser) {
   <?php include_once("analyticstracking.php") ?>
 
   <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+    <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Brentwood Leadership</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="/Main.php">Home</a></li>
-        <li><a href="/calendar.php">Calendar</a></li>
-        <li><a href="/contact.php">Contact Us</a></li>
-        <li><a href="/donate.php">Donate</a></li>
-        <li class="active"><a href="/login.php">Login</a></li>
-        <li><a href="/register.php">Register</a></li>
+        <li><a href="Main.php">Home</a></li>
+        <li><a href="calendar.php">Calendar</a></li>
+        <li><a href="contact.php">Contact Us</a></li>
+        <li><a href="donate.php">Donate</a></li>
+        <li class="active"><a href="login.php">Login</a></li>
+        <li><a href="register.php">Register</a></li>
       </ul>
     </div>
   </nav>
