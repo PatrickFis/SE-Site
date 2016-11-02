@@ -169,9 +169,6 @@ function onSignIn(googleUser) {
     </div>
 
   </div>
-<div class ="container">
-	<a href="#" data-target="#pwdModal" data-toggle="modal">Forgot my password</a>
-</div>
   <div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
     <div class="modal-content">
