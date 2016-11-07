@@ -200,7 +200,7 @@ function onSignIn(googleUser) {
                               <div class="panel-body">
                                   <fieldset>
                                       <div class="form-group">
-                                        <form method="post">
+                                        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                                           <input class="form-control input-lg" placeholder="E-mail Address" name="resetemail" type="email">
                                       </div>
                                       <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit" name="btn-reset">
