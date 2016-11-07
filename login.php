@@ -54,6 +54,16 @@ if( isset($_POST['btn-login']) ) {
 
   }
 
+  // Used to reset a user's password
+  if(isset($_POST['btn-reset'])) {
+    // Get the email supplied by the user and prevent SQL injections
+
+    $email = trim($_POST['resetemail']);
+    $email = strip_tags($email);
+    $email = htmlspecialchars($email);
+
+    echo sendEmail($email);
+  }
 }
 ?>
 <script>
@@ -190,9 +200,9 @@ function onSignIn(googleUser) {
                               <div class="panel-body">
                                   <fieldset>
                                       <div class="form-group">
-                                          <input class="form-control input-lg" placeholder="E-mail Address" name="email" type="email">
+                                          <input class="form-control input-lg" placeholder="E-mail Address" name="resetemail" type="email">
                                       </div>
-                                      <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit">
+                                      <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit" name="btn-reset">
                                   </fieldset>
                               </div>
                           </div>
