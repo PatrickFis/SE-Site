@@ -200,9 +200,11 @@ function onSignIn(googleUser) {
                               <div class="panel-body">
                                   <fieldset>
                                       <div class="form-group">
+                                        <form method="post">
                                           <input class="form-control input-lg" placeholder="E-mail Address" name="resetemail" type="email">
                                       </div>
                                       <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit" name="btn-reset">
+                                    </form>
                                   </fieldset>
                               </div>
                           </div>
