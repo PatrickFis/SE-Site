@@ -61,7 +61,6 @@ if( isset($_POST['btn-login']) ) {
     $email = trim($_POST['resetemail']);
     $email = strip_tags($email);
     $email = htmlspecialchars($email);
-
     $subject = "Password Change Request";
 
     $message = "Someone recently requested that the password associated with";
@@ -73,7 +72,7 @@ if( isset($_POST['btn-login']) ) {
     $header .= "MIME-Version: 1.0\r\n";
     $header .= "Content-type: text/html\r\n";
 
-    $retval = mail ($email,$subject,$message,$header);
+    $retval = mail($email,$subject,$message,$header);
 
     if( $retval == true ) {
        echo "Message sent successfully...";
