@@ -18,6 +18,8 @@ http://www.codingcage.com/2015/01/user-registration-and-login-script-using-php-m
 Created a .gitignore file with:
 https://help.github.com/articles/ignoring-files/
 
+Downloaded PHPMailer - 11/08/2016
+
 Useful commands:
 sudo service apache2 restart - Restarts the apache2 server.
 pbcopy - Copies things to Mac clipboard.
