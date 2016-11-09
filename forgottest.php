@@ -2,7 +2,7 @@
 ob_start();
 session_start();
 require_once 'dbconnect.php';
-
+require("/var/www/html/vendor/phpmailer/phpmailer/PHPMailerAutoload.php");
 // If user is currently logged in leave this page.
 if ( isset($_SESSION['user'])!="" ) {
   header("Location: Main.php");
@@ -32,11 +32,45 @@ if( isset($_POST['btn-login']) ) {
     $row=mysql_fetch_array($res);
     $count = mysql_num_rows($res); // Should only return one row
 
-    if( $count == 1 && $row['email']==$password ) {
-      $errMsg = "Is this working?";
+    if( $count == 1 && $row['email']==$email ) {
+      // Generate a 45 character random string.
+      $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      $charactersLength = strlen($characters);
+      $randomString = '';
+      for ($i = 0; $i < 45; $i++) {
+          $randomString .= $characters[rand(0, $charactersLength - 1)];
+      }
+      $resetQuery = mysql_query("UPDATE Users SET resetString='$randomString' WHERE email='$email'");
+      // $result = mysql_query($resetQuery);
+      print(mysql_error());
+      print($randomString);
+      print($email);
+      // $mail = new PHPMailer;
+      // // $mail->IsSMTP();
+      // $mail->Host = gethostbyname(smtp.gmail.com);
+      // $mail->Port = 587;
+      // $mail->SMTPSecure = "tls";
+      // $mail->SMTPAuth = true;
+      // $mail->Username = "brentwoodcalendar2016@gmail.com";
+      // $mail->Password = ""; // Change this password back and it will send emails again...
+      //
+      // $mail->setFrom("brentwoodcalendar2016@gmail.com", "Brentwood Leadership");
+      // $mail->addReplyTo("brentwoodcalendar2016@gmail.com", "Brentwood Leadership");
+      // $mail->addAddress($email);
+      // $mail->Subject = "PHPMailer GMail Test";
+      // $mail->Body = "Hello from PHPMailer!";
+      //
+      // if(!$mail->Send()) {
+      //   echo "Message was not sent.";
+      //   echo "Mailer error: " . $mail->ErrorInfo;
+      // } else {
+      //   echo "Message has been sent.";
+      // }
     } else {
       $errMSG = "Email not found.";
     }
+  }
+}
 ?>
 
 <!DOCTYPE html>
