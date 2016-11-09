@@ -42,9 +42,9 @@ if( isset($_POST['btn-login']) ) {
       }
       $resetQuery = mysql_query("UPDATE Users SET resetString='$randomString' WHERE email='$email'");
       // $result = mysql_query($resetQuery);
-      print(mysql_error());
-      print($randomString);
-      print($email);
+      // print(mysql_error());
+      // print($randomString);
+      // print($email);
       // $mail = new PHPMailer;
       // // $mail->IsSMTP();
       // $mail->Host = gethostbyname(smtp.gmail.com);
