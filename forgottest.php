@@ -3,6 +3,40 @@ ob_start();
 session_start();
 require_once 'dbconnect.php';
 
+// If user is currently logged in leave this page.
+if ( isset($_SESSION['user'])!="" ) {
+  header("Location: Main.php");
+  exit;
+}
+
+$error = false;
+
+if( isset($_POST['btn-login']) ) {
+
+  // prevent sql injections/ clear user invalid inputs
+  $email = trim($_POST['email']);
+  $email = strip_tags($email);
+  $email = htmlspecialchars($email);
+
+  if(empty($email)){
+    $error = true;
+    $emailError = "Please enter your email address.";
+  } else if ( !filter_var($email,FILTER_VALIDATE_EMAIL) ) {
+    $error = true;
+    $emailError = "Please enter valid email address.";
+  }
+
+  if (!$error) {
+
+    $res=mysql_query("SELECT idUsers, email FROM Users WHERE email ='$email'");
+    $row=mysql_fetch_array($res);
+    $count = mysql_num_rows($res); // Should only return one row
+
+    if( $count == 1 && $row['email']==$password ) {
+      $errMsg = "Is this working?";
+    } else {
+      $errMSG = "Email not found.";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -43,11 +77,62 @@ require_once 'dbconnect.php';
           <?php endif; ?>
         <?php endif; ?>
 
-
-
-
     <script src="assets/jquery-1.11.3-jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+
+    <div class="container">
+
+      <div id="login-form">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+
+          <div class="col-md-12">
+
+            <div class="form-group">
+              <h2 class="">Forgot password</h2>
+            </div>
+
+            <div class="form-group">
+              <hr />
+            </div>
+
+            <?php
+            if ( isset($errMSG) ) {
+
+              ?>
+              <div class="form-group">
+                <div class="alert alert-danger">
+                  <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
+                </div>
+              </div>
+              <?php
+            }
+            ?>
+
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                <input type="email" name="email" class="form-control" placeholder="Your Email" value="<?php echo $email; ?>" maxlength="40" />
+              </div>
+              <span class="text-danger"><?php echo $emailError; ?></span>
+            </div>
+            <div class="form-group">
+              <hr />
+            </div>
+
+            <div class="form-group">
+              <button type="submit" class="btn btn-block btn-primary" name="btn-login">Send Email</button>
+            </div>
+            <div class="form-group">
+              <hr />
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
 
   </body>
   </html>
