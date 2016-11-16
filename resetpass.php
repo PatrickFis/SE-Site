@@ -21,11 +21,10 @@ if( isset($_POST['btn-reset']) ) {
   $pass = strip_tags($pass);
   $pass = htmlspecialchars($pass);
 
-  $code = trim($_POST=['secCode']);
-  $code = strip_tags($code);
-  $code = htmlspecialchars($code);
-  echo "'$code'";
-  echo "'$email'";
+  $secCode = trim($_POST=['secCode']);
+  $secCode = strip_tags($secCode);
+  $secCode = htmlspecialchars($secCode);
+  echo "'$secCode'";
   // prevent sql injections / clear user invalid inputs
 
   if(empty($email)){
@@ -47,10 +46,9 @@ if( isset($_POST['btn-reset']) ) {
   }
   // if there's no error, change the password
   if (!$error) {
-    echo $code;
     $password = hash('sha256', $pass); // password hashing using SHA256
 
-    $res=mysql_query("SELECT idUsers, username, password FROM Users WHERE resetString ='$code'");
+    $res=mysql_query("SELECT idUsers, username, password FROM Users WHERE resetString ='$secCode'");
     $row=mysql_fetch_array($res);
     $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
     $id = $row['idUsers'];
@@ -140,7 +138,7 @@ if( isset($_POST['btn-reset']) ) {
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-              <input type="text" name="secCode" class="form-control" placeholder="Reset Code" value="<?php echo $code; ?>" maxlength="45" />
+              <input type="text" name="secCode" class="form-control" placeholder="Reset Code" maxlength="100" value="<?php echo $secCode; ?>" />
             </div>
             <span class="text-danger"><?php echo $secretError; ?></span>
           </div>
