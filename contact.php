@@ -26,9 +26,20 @@ if(isset($_SESSION['user'])) {
 <style>
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-    width: 40%;
-    height: 40%;
+    width: auto;
+    height: auto;
     margin: auto;
+    max-height: 400px;
+    max-width: 400px;
+    overflow: hidden;
+}
+.carousel-indicators li {
+background-color: #999;
+background-color: rgba(70,70,70,.25);
+}
+
+.carousel-indicators .active {
+background-color: #000000;
 }
 </style>
 </head>
