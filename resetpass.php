@@ -45,7 +45,7 @@ if( isset($_POST['btn-reset']) ) {
   }
   // if there's no error, change the password
   if (!$error) {
-
+    echo $code;
     $password = hash('sha256', $pass); // password hashing using SHA256
 
     $res=mysql_query("SELECT idUsers, username, password FROM Users WHERE resetString ='$code'");
