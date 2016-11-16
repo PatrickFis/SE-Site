@@ -40,7 +40,7 @@ if( isset($_POST['btn-reset']) ) {
     $passError = "Please enter your password.";
   }
 
-  if(empty($code)) {
+  if(empty($secCode)) {
     $error = true;
     $secError = "Please enter the code emailed to you.";
   }
@@ -48,7 +48,7 @@ if( isset($_POST['btn-reset']) ) {
   if (!$error) {
     $password = hash('sha256', $pass); // password hashing using SHA256
 
-    $res=mysql_query("SELECT idUsers, username, password FROM Users WHERE resetString =$secCode");
+    $res=mysql_query("SELECT idUsers, username, password FROM Users WHERE resetString ='$secCode'");
     $row=mysql_fetch_array($res);
     $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
     echo "count = '$count'";
