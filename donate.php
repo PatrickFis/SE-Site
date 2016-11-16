@@ -68,7 +68,7 @@ if(isset($_SESSION['user'])) {
     <div class="container">
   <form class="form-horizontal" role="form">
     <fieldset>
-      <legend>Payment</legend>
+      <legend>Donation</legend>
       <div class="form-group">
         <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
         <div class="col-sm-9">
