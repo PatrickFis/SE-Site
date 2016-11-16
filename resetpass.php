@@ -24,6 +24,8 @@ if( isset($_POST['btn-reset']) ) {
   $code = trim($_POST=['secCode']);
   $code = strip_tags($code);
   $code = htmlspecialchars($code);
+  echo "'$code'";
+  echo "'$email'";
   // prevent sql injections / clear user invalid inputs
 
   if(empty($email)){
@@ -138,7 +140,7 @@ if( isset($_POST['btn-reset']) ) {
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-              <input type="text" name="secCode" class="form-control" placeholder="Reset Code" maxlength="45" />
+              <input type="text" name="secCode" class="form-control" placeholder="Reset Code" value="<?php echo $code; ?>" maxlength="45" />
             </div>
             <span class="text-danger"><?php echo $secretError; ?></span>
           </div>
