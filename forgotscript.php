@@ -9,6 +9,6 @@ if ( isset($_SESSION['user'])!="" ) {
   exit;
 }
 
-$email = trim($_POST['email']);
+$email = trim($_POST['resetemail']);
 echo $email;
 ?>
