@@ -64,7 +64,7 @@ if( isset($_POST['btn-reset']) ) {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
+  <title>Reset Password</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -99,7 +99,7 @@ if( isset($_POST['btn-reset']) ) {
         <div class="col-md-12">
 
           <div class="form-group">
-            <h2 class="">Sign In.</h2>
+            <h2 class="">Reset Password</h2>
           </div>
 
           <div class="form-group">
