@@ -10,5 +10,5 @@ if ( isset($_SESSION['user'])!="" ) {
 }
 
 $email = trim($_POST['email']);
-echo "HELLO.";
+echo $email;
 ?>
