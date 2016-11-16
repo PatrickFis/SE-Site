@@ -203,7 +203,7 @@
                  <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
               <input type="text" name="secretans" class="form-control" placeholder="Enter secret answer" maxlength="100" />
               </div>
-              <span class="text-danger"><?php echo $secretError; ?></span>
+              <span class="text-danger"><//?php echo $secretError; ?></span>
             </div> -->
 
             <div class="form-group">

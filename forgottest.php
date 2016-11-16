@@ -12,7 +12,8 @@ if ( isset($_SESSION['user'])!="" ) {
 $error = false;
 
 if( isset($_POST['btn-login']) ) {
-
+  // Generate a random string for a user to reset their password with. Emails will be
+  // sent using a cronjob.
   // prevent sql injections/ clear user invalid inputs
   $email = trim($_POST['email']);
   $email = strip_tags($email);
@@ -40,7 +41,7 @@ if( isset($_POST['btn-login']) ) {
       for ($i = 0; $i < 45; $i++) {
           $randomString .= $characters[rand(0, $charactersLength - 1)];
       }
-      $resetQuery = mysql_query("UPDATE Users SET resetString='$randomString' WHERE email='$email'");
+      $resetQuery = mysql_query("UPDATE Users SET resetString='$randomString', sentResetEmail=0 WHERE email='$email'");
       // $result = mysql_query($resetQuery);
       // print(mysql_error());
       // print($randomString);

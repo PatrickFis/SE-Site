@@ -99,6 +99,35 @@ function onSignIn(googleUser) {
   xhr.send('id=' + id_token);
 }
 </script>
+
+<script>
+/* must apply only after HTML has loaded */
+$(document).ready(function () {
+    $("#resetModal").on("submit", function(e) {
+        var postData = $(this).serializeArray();
+        var formURL = $(this).attr("action");
+        $.ajax({
+            url: formURL,
+            type: "POST",
+            data: postData,
+            success: function(data, textStatus, jqXHR) {
+                $('#contact_dialog .modal-header .modal-title').html("Result");
+                $('#contact_dialog .modal-body').html(data);
+                $("#submitForm").remove();
+            },
+            error: function(jqXHR, status, error) {
+                console.log(status + ": " + error);
+            }
+        });
+        e.preventDefault();
+    });
+
+    $("#btn-reset").on('click', function() {
+        $("#resetModal").submit();
+    });
+});
+
+</script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -206,7 +235,7 @@ function onSignIn(googleUser) {
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h1 class="text-center">What's My Password?</h1>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="resetModal">
             <div class="col-md-12">
                   <div class="panel panel-default">
                       <div class="panel-body">
@@ -216,7 +245,7 @@ function onSignIn(googleUser) {
                               <div class="panel-body">
                                   <fieldset>
                                       <div class="form-group">
-                                        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                                        <form method="post" action="/forgotscript.php">
                                           <input class="form-control input-lg" placeholder="E-mail Address" name="resetemail" type="email">
                                       </div>
                                       <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit" name="btn-reset">
