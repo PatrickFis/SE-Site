@@ -11,7 +11,7 @@ if ( isset($_SESSION['user'])!="" ) {
 
 $error = false;
 
-if( isset($_POST['btn-reset']) ) {
+if( isset($_POST['btn-login']) ) {
 
   // prevent sql injections/ clear user invalid inputs
   $email = trim($_POST['email']);

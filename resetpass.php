@@ -157,7 +157,6 @@ if( isset($_POST['btn-reset']) ) {
     </div>
 
   </div>
-</div>
 </body>
 </html>
 <?php ob_end_flush(); ?>
