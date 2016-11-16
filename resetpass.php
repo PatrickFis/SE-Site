@@ -43,7 +43,7 @@ if( isset($_POST['btn-reset']) ) {
     $error = true;
     $secError = "Please enter the code emailed to you.";
   }
-  // if there's no error, continue to login
+  // if there's no error, change the password
   if (!$error) {
 
     $password = hash('sha256', $pass); // password hashing using SHA256
