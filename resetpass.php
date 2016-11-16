@@ -23,7 +23,7 @@ if( isset($_POST['btn-reset']) ) {
 
   $code = trim($_POST=['secCode']);
   $code = strip_tags($code);
-  $code = htmlspecialchars($code)
+  $code = htmlspecialchars($code);
   // prevent sql injections / clear user invalid inputs
 
   if(empty($email)){
