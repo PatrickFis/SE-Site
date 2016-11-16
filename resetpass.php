@@ -24,6 +24,7 @@ if( isset($_POST['btn-reset']) ) {
   $secCode = trim($_POST['secCode']);
   $secCode = strip_tags($secCode);
   $secCode = htmlspecialchars($secCode);
+  echo "'$secCode'";
   // prevent sql injections / clear user invalid inputs
 
   if(empty($email)){
@@ -50,9 +51,10 @@ if( isset($_POST['btn-reset']) ) {
     $res=mysql_query("SELECT idUsers, username, password FROM Users WHERE resetString ='$secCode'");
     $row=mysql_fetch_array($res);
     $count = mysql_num_rows($res); // if uname/pass correct it returns must be 1 row
+    echo "count = '$count'";
     $id = $row['idUsers'];
     if( $count == 1) {
-      $updateQuery = mysql_query("UPDATE Users SET password='$password' WHERE idUsers='$id'");
+      $updateQuery = mysql_query("UPDATE Users SET password='$password' WHERE email='$email'");
     } else {
       $errMSG = "Something went wrong, please try again...";
     }
