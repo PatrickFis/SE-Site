@@ -25,6 +25,9 @@ if( isset($_POST['btn-reset']) ) {
   $secCode = strip_tags($secCode);
   $secCode = htmlspecialchars($secCode);
   echo "'$secCode'";
+  echo "\n";
+  echo "'$email\n'";
+  echo "'$pass'";
   // prevent sql injections / clear user invalid inputs
 
   if(empty($email)){
