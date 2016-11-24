@@ -113,7 +113,7 @@ if(isset($_SESSION['user'])) {
           <h3>Purpose</h3>
           <p>To identify and educate present and future leaders and integrate them into the Brentwood community.</p>
         </div>
-        <br><br><br>
+        <br><br><br><br><br>
       </div>
     </div>
   <!-- Footer here, can add this to other pages later. -->
