@@ -83,32 +83,34 @@ if(isset($_SESSION['user'])) {
       <li><a data-toggle="tab" href="#Program">Program</a></li>
       <li><a data-toggle="tab" href="#Purpose">Purpose</a></li>
     </ul>
-    <div class="tab-content">
-      <div id="Objectives" class="tab-pane fade in active">
-        <h3>Objectives</h3>
-        <ul>
-          <li>Provide an educational format which allows leaders to enhance their leadership abilities through exposure to and understanding of all aspects of the  Brentwood community.</li>
-          <li>Promote a free exchange of ideas and concerns among the various segments of Brentwood.</li>
-          <li>Foster an attitude of increased participation and commitment within the community.</li>
-          <li>Identify leaders from the civic, educational, government, religious and business communities who will use their leadership knowledge, skills and abilities for the long-term benefit of the  Brentwood community.</li>
-        </ul>
-      </div>
-      <div id="Program" class="tab-pane fade">
-        <h3>Program</h3>
-        <p>The Leadership Brentwood program is sponsored by the Williamson County Chamber Foundation, the non-profit arm of the  Williamson, Inc. Chamber of Commerce.
+    <div class="col-md-9">
+      <div class="tab-content">
+        <div id="Objectives" class="tab-pane fade in active">
+          <h3>Objectives</h3>
+          <ul>
+            <li>Provide an educational format which allows leaders to enhance their leadership abilities through exposure to and understanding of all aspects of the  Brentwood community.</li>
+            <li>Promote a free exchange of ideas and concerns among the various segments of Brentwood.</li>
+            <li>Foster an attitude of increased participation and commitment within the community.</li>
+            <li>Identify leaders from the civic, educational, government, religious and business communities who will use their leadership knowledge, skills and abilities for the long-term benefit of the  Brentwood community.</li>
+          </ul>
+        </div>
+        <div id="Program" class="tab-pane fade">
+          <h3>Program</h3>
+          <p>The Leadership Brentwood program is sponsored by the Williamson County Chamber Foundation, the non-profit arm of the  Williamson, Inc. Chamber of Commerce.
 
-            The program consists of daylong seminars, group discussions, field trips and retreats that address different issues in the Brentwood and surrounding areas. The sessions create a forum to exchange ideas and discuss areas of interest. Each participant will be involved in a small group project outside of the program schedule to leave a legacy for the community.
+              The program consists of daylong seminars, group discussions, field trips and retreats that address different issues in the Brentwood and surrounding areas. The sessions create a forum to exchange ideas and discuss areas of interest. Each participant will be involved in a small group project outside of the program schedule to leave a legacy for the community.
 
-            The program offers individuals the opportunity to become involved and to make a difference in Brentwood and in Williamson County.
+              The program offers individuals the opportunity to become involved and to make a difference in Brentwood and in Williamson County.
 
-            The daylong programs include a focus on history, education, business, economic development, media/entertainment, government and quality of life.
+              The daylong programs include a focus on history, education, business, economic development, media/entertainment, government and quality of life.
 
-            Participants are also given the opportunity to network and develop relationships with other class members and community leaders.
-        </p>
-      </div>
-      <div id="Purpose" class="tab-pane fade">
-        <h3>Purpose</h3>
-        <p>To identify and educate present and future leaders and integrate them into the Brentwood community.</p>
+              Participants are also given the opportunity to network and develop relationships with other class members and community leaders.
+          </p>
+        </div>
+        <div id="Purpose" class="tab-pane fade">
+          <h3>Purpose</h3>
+          <p>To identify and educate present and future leaders and integrate them into the Brentwood community.</p>
+        </div>
       </div>
     </div>
   </div>
