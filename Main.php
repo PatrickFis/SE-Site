@@ -93,6 +93,7 @@ if(isset($_SESSION['user'])) {
             <li>Foster an attitude of increased participation and commitment within the community.</li>
             <li>Identify leaders from the civic, educational, government, religious and business communities who will use their leadership knowledge, skills and abilities for the long-term benefit of the  Brentwood community.</li>
           </ul>
+          <br><br><br>
         </div>
         <div id="Program" class="tab-pane fade">
           <h3>Program</h3>
@@ -106,11 +107,13 @@ if(isset($_SESSION['user'])) {
 
               Participants are also given the opportunity to network and develop relationships with other class members and community leaders.
           </p>
+          <br><br><br>
         </div>
         <div id="Purpose" class="tab-pane fade">
           <h3>Purpose</h3>
           <p>To identify and educate present and future leaders and integrate them into the Brentwood community.</p>
         </div>
+        <br><br><br>
       </div>
     </div>
   <!-- Footer here, can add this to other pages later. -->
