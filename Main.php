@@ -75,7 +75,7 @@ if(isset($_SESSION['user'])) {
         <h1>Welcome to the Brentwood Leadership site</h1>
         <p>This page is just a placeholder</p>
       </div>
-    </div>
+
 
 <!-- This will display information about the objectives, program, and purpose of the program. -->
     <ul class="nav nav-tabs">
@@ -111,6 +111,7 @@ if(isset($_SESSION['user'])) {
         <p>To identify and educate present and future leaders and integrate them into the Brentwood community.</p>
       </div>
     </div>
+  </div>
 
 
 
