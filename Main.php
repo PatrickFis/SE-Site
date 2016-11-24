@@ -114,7 +114,8 @@ if(isset($_SESSION['user'])) {
       </div>
     </div>
   </div>
-
+  <br>
+  <br>
   <!-- Footer here, can add this to other pages later. -->
   <div class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
