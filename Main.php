@@ -29,7 +29,7 @@ if(isset($_SESSION['user'])) {
 <body>
   <?php include_once("analyticstracking.php") ?>
 
-  <nav class="navbar navbar-inverse">
+  <nav class="navbar navbar-inverse navbar-fixed-left">
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
