@@ -113,15 +113,13 @@ if(isset($_SESSION['user'])) {
         </div>
       </div>
     </div>
-  </div>
-  <br>
-  <br>
   <!-- Footer here, can add this to other pages later. -->
   <div class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
         <p class="navbar-text pull-left">© 2016 - All rights reserved – Williamson County Chamber Foundation, an affiliate of the Williamson County Chamber of Commerce</p>
       </div>
   </div>
+</div>
 
 
 
