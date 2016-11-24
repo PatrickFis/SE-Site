@@ -114,11 +114,11 @@ if(isset($_SESSION['user'])) {
   </div>
 
   <!-- Footer here, can add this to other pages later. -->
-  <footer class="footer">
+  <div class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
-        <span class="text-muted">All rights reserved – Williamson County Chamber Foundation, an affiliate of the Williamson County Chamber of Commerce</span>
+        <p class="navbar-text pull-left">© 2016 - All rights reserved – Williamson County Chamber Foundation, an affiliate of the Williamson County Chamber of Commerce</p>
       </div>
-    </footer>
+  </div>
 
 
 
