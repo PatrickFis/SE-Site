@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-require_once 'dbconnect.php';
+//require_once 'dbconnect.php';
 
 // if session is not set this will redirect to login page
 if( !isset($_SESSION['user']) ) {
@@ -92,9 +92,9 @@ background-color: #000000;
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
-
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
+
           <div class="item active">
             <img src="img/swagger_duder.jpg" alt="dude" width="460" height="345">
           </div>
