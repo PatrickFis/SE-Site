@@ -101,7 +101,6 @@ background-color: #000000;
             foreach($images as $image) {
               echo '<div class="item' .($flag?' active':''). '">'.PHP_EOL."\t\t";
               echo '<img src="'.$image.'" alt=""></div>'.PHP_EOL."\t";
-              $flag = 0;
             }
            ?>
           <!-- <div class="item active">
