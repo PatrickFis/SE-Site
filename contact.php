@@ -92,10 +92,19 @@ background-color: #000000;
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
-
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
-          <div class="item active">
+          <?php
+            $dirname = "/var/www/html/img/";
+            $images = glob($dirname."*.jpg");
+            $flag = 1; // Make the first item active
+            foreach($images as $image) {
+              echo '<div class="item' .($flag?' active':''). '">'.PHP_EOL."\t\t";
+              echo 'img src="'.$image.'" alt=""></div>'.PHP_EOL."\t";
+              $flag = 0;
+            }
+           ?>
+          <!-- <div class="item active">
             <img src="img/swagger_duder.jpg" alt="dude" width="460" height="345">
           </div>
 
@@ -105,7 +114,7 @@ background-color: #000000;
 
           <div class="item">
             <img src="img/leadership_shirt.jpg" alt="shirt" width="460" height="345">
-          </div>
+          </div> -->
         </div>
 
       </div>
