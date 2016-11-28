@@ -95,7 +95,7 @@ background-color: #000000;
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <?php
-            $dirname = "/var/www/html/img/";
+            $dirname = "img/";
             $images = glob($dirname."*.jpg");
             $flag = 1; // Make the first item active
             foreach($images as $image) {
