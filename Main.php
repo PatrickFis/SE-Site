@@ -74,8 +74,11 @@ if(isset($_SESSION['user'])) {
     </nav>
     <div class="container">
       <div class="jumbotron">
-        <h1>Welcome to the Brentwood Leadership site</h1>
-        <p>This page is just a placeholder</p>
+        <?php
+            $announcementQuery = "SELECT announce FROM announcements WHERE idannouncements=0";
+            $result = mysql_query($announcementQuery);
+            echo $result['announce'];
+         ?>
       </div>
 
 
