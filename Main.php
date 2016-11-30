@@ -77,7 +77,9 @@ if(isset($_SESSION['user'])) {
         <?php
             $announcementQuery = "SELECT announce FROM announcements WHERE idannouncements=0";
             $result = mysql_query($announcementQuery);
-            echo $result['announce'];
+            while($annRow = mysql_fetch_array($result)) {
+              echo $annRow['announce'];
+            }
          ?>
       </div>
 
