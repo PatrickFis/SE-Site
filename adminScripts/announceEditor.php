@@ -13,6 +13,6 @@ $userRow=mysql_fetch_array($res);
 $adminRes=mysql_query("SELECT * FROM admin WHERE idadmin=".$userRow['idUsers']);
 $adminRow=mysql_fetch_array($adminRes); // Check to see if current user is an admin
 if($adminRow['idadmin'] == "") {
-  header("Location: Main.php");
+  header("Location: ../Main.php");
 }
 ?>
