@@ -76,9 +76,16 @@ if(isset($_SESSION['user'])) {
 
 <!-- This will display information about the objectives, program, and purpose of the program. -->
     <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
-      <li class="active"><a data-toggle="tab" href="#Objectives">Objectives</a></li>
-      <li><a data-toggle="tab" href="#Program">Program</a></li>
-      <li><a data-toggle="tab" href="#Purpose">Purpose</a></li>
+      <li class="active"><a data-toggle="tab" href="#Presenting">Presenting Sponser</a></li>
+      <li><a data-toggle="tab" href="#Opening">Opening Reception</a></li>
+      <li><a data-toggle="tab" href="#Education">Education Day</a></li>
+      <li><a data-toggle="tab" href="#Business">Business Day</a></li>
+      <li><a data-toggle="tab" href="#History">History Day</a></li>
+      <li><a data-toggle="tab" href="#Quality">Quality of Life Day</a></li>
+      <li><a data-toggle="tab" href="#Government">Government Day</a></li>
+      <li><a data-toggle="tab" href="#Media">Media &amp; Entertainment Day</a></li>
+      <li><a data-toggle="tab" href="#Retreat">Closing Retreat and Graduation</a></li>
+      <li><a data-toggle="tab" href="#Support">Supporting Sponsers and In-Kind</a></li>
     </ul>
     <div class="col-md-9">
       <div class="tab-content">
