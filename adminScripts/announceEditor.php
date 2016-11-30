@@ -15,7 +15,7 @@ if($adminRow['idadmin'] == "") {
   header("Location: ../Main.php");
 }
   $newAnnouncement = $_POST['announce'];
-  $updateQuery=mysql_query("UPDATE announcements SET announce=$newAnnouncement WHERE idannouncements=0");
+  $updateQuery=mysql_query("UPDATE announcements SET announce='$newAnnouncement' WHERE idannouncements=0");
   if(!$updateQuery) {
     echo mysql_error();
   }
