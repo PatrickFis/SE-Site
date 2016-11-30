@@ -14,6 +14,6 @@ $adminRow=mysql_fetch_array($adminRes); // Check to see if current user is an ad
 if($adminRow['idadmin'] == "") {
   header("Location: ../Main.php");
 }
-
-  $updateQuery=mysql_query("UPDATE announcements SET announce=".$_POST['announce']." WHERE idannouncements=0");
+  $newAnnouncement = $_POST['announce'];
+  $updateQuery=mysql_query("UPDATE announcements SET announce=$newAnnouncement WHERE idannouncements=0");
 ?>
