@@ -82,8 +82,11 @@ if($adminRow['idadmin'] == "") {
             </div>
             <div id="Sponsor" class="tab-pane fade">
               <h3>Sponsor Editor</h3>
-              <p>After uploading a picture to the sponsorimg directory, use this tool to
-              add it to the list of sponsors.</p>
+              <form action="adminScripts/sponsorEditor.php" method="post" enctype="multipart/form-data">
+                Select image to upload:
+                <input type="file" name="fileToUpload" id="fileToUpload">
+                <input type="submit" value="Upload Image" name="submit">
+              </form>
               <br><br><br>
             </div>
             <div id="Announcements" class="tab-pane fade">
