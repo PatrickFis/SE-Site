@@ -1,5 +1,5 @@
 <?php
-$target_dir = "adminScripts/sponsorimg/";
+$target_dir = "sponsorimg/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -35,10 +35,20 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    if (copy($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";
+        echo "</p>";
+        echo '<pre>';
+        echo 'Here is some more debugging info:';
+        print_r($_FILES);
+        echo basename( $_FILES["fileToUpload"]["name"]);
+        echo "<br>";
+        echo $_FILES["fileToUpload"]["tmp_name"];
+        echo "<br>";
+        echo $target_file;
+        print "</pre>";
     }
 }
 ?>
