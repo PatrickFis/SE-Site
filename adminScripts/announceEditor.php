@@ -16,4 +16,7 @@ if($adminRow['idadmin'] == "") {
 }
   $newAnnouncement = $_POST['announce'];
   $updateQuery=mysql_query("UPDATE announcements SET announce=$newAnnouncement WHERE idannouncements=0");
+  if(!$updateQuery) {
+    echo mysql_error();
+  }
 ?>
