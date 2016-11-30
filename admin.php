@@ -17,7 +17,7 @@ if($adminRow['idadmin'] == "") {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
+  <title>Admin</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -39,7 +39,7 @@ if($adminRow['idadmin'] == "") {
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="Main.php">Home</a></li>
+          <li><a href="Main.php">Home</a></li>
           <li><a href="calendar.php">Calendar</a></li>
           <li><a href="contact.php">Contact Us</a></li>
           <li><a href="donate.php">Donate</a></li>
@@ -89,6 +89,13 @@ if($adminRow['idadmin'] == "") {
             <div id="Announcements" class="tab-pane fade">
               <h3>Announcement Editor</h3>
               <p>Use this editor to create announcements for the main page of your website.</p>
+              <div class="form-group">
+                <label for="announce">Announcement:</label>
+                <textarea class="form-control" rows="5" id="ann"></textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
+              </div>
             </div>
             <br><br><br><br><br>
           </div>
