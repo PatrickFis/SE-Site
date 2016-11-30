@@ -19,7 +19,7 @@ if(isset($_SESSION['user'])) {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Homepage</title>
+  <title>Sponsers</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -92,7 +92,7 @@ if(isset($_SESSION['user'])) {
         <div id="Presenting" class="tab-pane fade in active">
           <h3>Presenting Sponser</h3>
             <h4>Nissan North America</h4>
-            <img class="img-responsive" src="sponserimg/Nissan-logo.png" alt="Nissan Logo">
+            <img class="img-responsive" src="sponserimg/Nissan-logo.png" alt="Nissan Logo" height=>
           <br><br><br>
         </div>
         <div id="Opening" class="tab-pane fade">
