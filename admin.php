@@ -66,7 +66,33 @@ if($adminRow['idadmin'] == "") {
       </div>
     </nav>
 
-  </div>
+    <!-- This will display information about the objectives, program, and purpose of the program. -->
+        <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
+          <li class="active"><a data-toggle="tab" href="#Contact">Contact Editor</a></li>
+          <li><a data-toggle="tab" href="#Sponsor">Sponsor Editor</a></li>
+          <li><a data-toggle="tab" href="#Announcements">Announcement Editor</a></li>
+        </ul>
+        <div class="col-md-9">
+          <div class="tab-content">
+            <div id="Contact" class="tab-pane fade in active">
+              <h3>Contact Editor</h3>
+                <p>After uploading a picture to the img directory, use this tool to
+                add it to the slideshow.</p>
+              <br><br><br>
+            </div>
+            <div id="Sponsor" class="tab-pane fade">
+              <h3>Sponsor Editor</h3>
+              <p>After uploading a picture to the sponsorimg directory, use this tool to
+              add it to the list of sponsors.</p>
+              <br><br><br>
+            </div>
+            <div id="Announcements" class="tab-pane fade">
+              <h3>Announcement Editor</h3>
+              <p>Use this editor to create announcements for the main page of your website.</p>
+            </div>
+            <br><br><br><br><br>
+          </div>
+        </div>
 
 </body>
 </html>
