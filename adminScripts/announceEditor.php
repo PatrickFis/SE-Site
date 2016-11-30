@@ -5,8 +5,7 @@ if( !isset($_SESSION['user'])!="" ){
   header("Location: ../Main.php");
 }
 include_once '../dbconnect.php';
-echo "Posted text: ";
-echo $_POST['announce'];
+// Make sure the user is signed in and is an administrator
 $error = false;
 $res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
@@ -15,4 +14,6 @@ $adminRow=mysql_fetch_array($adminRes); // Check to see if current user is an ad
 if($adminRow['idadmin'] == "") {
   header("Location: ../Main.php");
 }
+
+  $updateQuery=mysql_query("UPDATE announcements SET announce=".$_POST['announce']." WHERE idannouncement=0");
 ?>
