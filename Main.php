@@ -79,7 +79,7 @@ if(isset($_SESSION['user'])) {
 
 
 <!-- This will display information about the objectives, program, and purpose of the program. -->
-    <ul class="nav nav-tabs nav-stacked col-md-3">
+    <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
       <li class="active"><a data-toggle="tab" href="#Objectives">Objectives</a></li>
       <li><a data-toggle="tab" href="#Program">Program</a></li>
       <li><a data-toggle="tab" href="#Purpose">Purpose</a></li>
