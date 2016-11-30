@@ -43,11 +43,11 @@ if(isset($_SESSION['user'])) {
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="Main.php">Home</a></li>
+          <li><a href="Main.php">Home</a></li>
           <li><a href="calendar.php">Calendar</a></li>
           <li><a href="contact.php">Contact Us</a></li>
           <li><a href="donate.php">Donate</a></li>
-          <li><a href="sponsers.php">Sponsers</a></li>
+          <li class="active"><a href="sponsers.php">Sponsers</a></li>
           <?php if(!isset($_SESSION['user'])): ?> <!-- Hides these two buttons if logged in. -->
           <li><a href="login.php">Login</a></li>
           <li><a href="register.php">Register</a></li>
@@ -72,11 +72,6 @@ if(isset($_SESSION['user'])) {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="container">
-      <div class="jumbotron">
-        <h1>Welcome to the Brentwood Leadership site</h1>
-        <p>This page is just a placeholder</p>
-      </div>
 
 
 <!-- This will display information about the objectives, program, and purpose of the program. -->
@@ -87,33 +82,48 @@ if(isset($_SESSION['user'])) {
     </ul>
     <div class="col-md-9">
       <div class="tab-content">
-        <div id="Objectives" class="tab-pane fade in active">
-          <h3>Objectives</h3>
-          <ul>
-            <li>Provide an educational format which allows leaders to enhance their leadership abilities through exposure to and understanding of all aspects of the  Brentwood community.</li>
-            <li>Promote a free exchange of ideas and concerns among the various segments of Brentwood.</li>
-            <li>Foster an attitude of increased participation and commitment within the community.</li>
-            <li>Identify leaders from the civic, educational, government, religious and business communities who will use their leadership knowledge, skills and abilities for the long-term benefit of the  Brentwood community.</li>
-          </ul>
+        <div id="Presenting" class="tab-pane fade in active">
+          <h3>Presenting Sponser</h3>
+            <h4>Nissan North America</h4>
           <br><br><br>
         </div>
-        <div id="Program" class="tab-pane fade">
-          <h3>Program</h3>
-          <p>The Leadership Brentwood program is sponsored by the Williamson County Chamber Foundation, the non-profit arm of the  Williamson, Inc. Chamber of Commerce.
-
-              The program consists of daylong seminars, group discussions, field trips and retreats that address different issues in the Brentwood and surrounding areas. The sessions create a forum to exchange ideas and discuss areas of interest. Each participant will be involved in a small group project outside of the program schedule to leave a legacy for the community.
-
-              The program offers individuals the opportunity to become involved and to make a difference in Brentwood and in Williamson County.
-
-              The daylong programs include a focus on history, education, business, economic development, media/entertainment, government and quality of life.
-
-              Participants are also given the opportunity to network and develop relationships with other class members and community leaders.
-          </p>
+        <div id="Opening" class="tab-pane fade">
+          <h3>Opening Reception</h3>
+            <h4>Bancorp South</h4>
           <br><br><br>
         </div>
-        <div id="Purpose" class="tab-pane fade">
-          <h3>Purpose</h3>
-          <p>To identify and educate present and future leaders and integrate them into the Brentwood community.</p>
+        <div id="Education" class="tab-pane fade">
+          <h3>Education Day</h3>
+          <h4>LBMC</h4>
+        </div>
+        <div id="Business" class="tab-pane fade">
+          <h3>Business Day</h3>
+          <h4>SVN Commercial Realtors</h4>
+        </div>
+        <div id="History" class="tab-pane fade">
+          <h3>History Day</h3>
+          <h4>Pinnacle Financial Partners</h4>
+        </div>
+        <div id="Quality" class="tab-pane fade">
+          <h3>Quality of Life Day</h3>
+          <h4>None</h4>
+        </div>
+        <div id="Government" class="tab-pane fade">
+          <h3>Government Day</h3>
+          <h4>None</h4>
+        </div>
+        <div id="Media" class="tab-pane fade">
+          <h3>Media &amp; Entertainment Day</h3>
+          <h4>None</h4>
+        </div>
+        <div id="Retreat" class="tab-pane fade">
+          <h3>Closing Retreat and Graduation</h3>
+          <h4>Skanska</h4>
+        </div>
+        <div id="Support" class="tab-pane fade">
+          <h3>Supporting Sponsers and In-Kind</h3>
+          <h4>Brentwood Roesch-Patton Funeral Home</h4>
+          <h4>Zeitlin &amp; Company, Realtors-Linda Hirsch</h4>
         </div>
         <br><br><br><br><br>
       </div>

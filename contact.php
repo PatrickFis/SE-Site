@@ -62,6 +62,7 @@ background-color: #000000;
           <li><a href="calendar.php">Calendar</a></li>
           <li class="active"><a href="contact.php">Contact Us</a></li>
           <li><a href="donate.php">Donate</a></li>
+          <li><a href="sponsers.php">Sponsers</a></li>
           <?php if(!isset($_SESSION['user'])): ?> <!-- Hides these two buttons if logged in. -->
           <li><a href="login.php">Login</a></li>
           <li><a href="register.php">Register</a></li>
@@ -96,7 +97,7 @@ background-color: #000000;
         <div class="carousel-inner" role="listbox">
           <?php
             // This code pulls a list of images for the img directory and then
-            // generates code 
+            // generates code
             $dirname = "img/";
             $images = glob($dirname."*.jpg");
             $flag = 1; // Make the first item active
