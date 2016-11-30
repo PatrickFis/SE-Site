@@ -15,5 +15,5 @@ if($adminRow['idadmin'] == "") {
   header("Location: ../Main.php");
 }
 
-  $updateQuery=mysql_query("UPDATE announcements SET announce=".$_POST['announce']." WHERE idannouncement=0");
+  $updateQuery=mysql_query("UPDATE announcements SET announce=".$_POST['announce']." WHERE idannouncements=0");
 ?>
