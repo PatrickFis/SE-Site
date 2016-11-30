@@ -92,19 +92,19 @@ if(isset($_SESSION['user'])) {
         <div id="Presenting" class="tab-pane fade in active">
           <h3>Presenting Sponser</h3>
             <h4>Nissan North America</h4>
-            <img src="sponserimg/nissan-logo.jpg" alt="Nissan Logo">
+            <img class="img-responsive" src="sponserimg/nissan-logo.jpg" alt="Nissan Logo">
           <br><br><br>
         </div>
         <div id="Opening" class="tab-pane fade">
           <h3>Opening Reception</h3>
             <h4>BancorpSouth</h4>
-            <img src="sponserimg/bancorpsouth-inc-logo.jpg" alt="BancorpSouth Logo">
+            <img class="img-responsive" src="sponserimg/bancorpsouth-inc-logo.jpg" alt="BancorpSouth Logo">
           <br><br><br>
         </div>
         <div id="Education" class="tab-pane fade">
           <h3>Education Day</h3>
           <h4>LBMC</h4>
-          <img src="sponserimg/LBMC.png" alt="LBMC Logo">
+          <img class="img-responsive" src="sponserimg/LBMC.png" alt="LBMC Logo">
         </div>
         <div id="Business" class="tab-pane fade">
           <h3>Business Day</h3>
@@ -113,7 +113,7 @@ if(isset($_SESSION['user'])) {
         <div id="History" class="tab-pane fade">
           <h3>History Day</h3>
           <h4>Pinnacle Financial Partners</h4>
-          <img src="sponserimg/FinancialPartnersColor_calogo1499.jpg" alt="Pinnacle Financial Partners Logo">
+          <img class="img-responsive" src="sponserimg/FinancialPartnersColor_calogo1499.jpg" alt="Pinnacle Financial Partners Logo">
         </div>
         <div id="Quality" class="tab-pane fade">
           <h3>Quality of Life Day</h3>
@@ -130,7 +130,7 @@ if(isset($_SESSION['user'])) {
         <div id="Retreat" class="tab-pane fade">
           <h3>Closing Retreat and Graduation</h3>
           <h4>Skanska</h4>
-          <img src="sponserimg/Skanska-Logo.png" alt="Skanska Logo">
+          <img class="img-responsive" src="sponserimg/Skanska-Logo.png" alt="Skanska Logo">
         </div>
         <div id="Support" class="tab-pane fade">
           <h3>Supporting Sponsers and In-Kind</h3>
