@@ -2,9 +2,9 @@
 ob_start();
 session_start();
 if( !isset($_SESSION['user'])!="" ){
-  header("Location: Main.php");
+  header("Location: ../Main.php");
 }
-include_once 'dbconnect.php';
+include_once '../dbconnect.php';
 echo "Posted text: ";
 echo $_POST['announce'];
 $error = false;
