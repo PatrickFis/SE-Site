@@ -4,7 +4,7 @@ session_start();
 if( !isset($_SESSION['user'])!="" ){
   header("Location: ../Main.php");
 }
-include_once '../dbconnect.php';
+include_once ('../dbconnect.php');
 // Make sure the user is signed in and is an administrator
 $error = false;
 $res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
