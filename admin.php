@@ -89,13 +89,15 @@ if($adminRow['idadmin'] == "") {
             <div id="Announcements" class="tab-pane fade">
               <h3>Announcement Editor</h3>
               <p>Use this editor to create announcements for the main page of your website.</p>
-              <div class="form-group">
-                <label for="announce">Announcement:</label>
-                <textarea class="form-control" rows="5" id="ann"></textarea>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
-              </div>
+              <form action="adminScripts/announceEditor.php" method="post">
+                <div class="form-group">
+                  <label for="announce">Announcement:</label>
+                  <textarea class="form-control" rows="5" id="ann" name="announce"></textarea>
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
+                </div>
+            </form>
             </div>
             <br><br><br><br><br>
           </div>
