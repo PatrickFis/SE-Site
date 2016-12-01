@@ -7,8 +7,8 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-      echo $_POST['sponName'];
-      echo $_POST['sideName'];
+      // echo $_POST['sponName'];
+      // echo $_POST['sideName'];
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
@@ -39,9 +39,12 @@ if ($uploadOk == 0) {
 } else {
     if (copy($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        print_r($_POST);
+        // print_r($_POST);
         // Add code to update sponsor table here
-        $insertQuery = "INSERT INTO sponsors VALUES ";
+        $sponname = $_POST['sponName'];
+        $sidename = $_POST['sideName'];
+        $insertQuery = "INSERT INTO sponsors (imgpath, sponsorName, sidebarName) VALUES($target_file, $sponname, $sidename)";
+        $res = mysql_query($insertQuery);
     } else {
         echo "Sorry, there was an error uploading your file.";
         echo "</p>";
