@@ -4,11 +4,11 @@ $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
-// echo $_POST['sponName'];
-// echo $_POST['sideName'];
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
+      echo $_POST['sponName'];
+      echo $_POST['sideName'];
         echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
@@ -39,6 +39,7 @@ if ($uploadOk == 0) {
 } else {
     if (copy($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        print_r($_POST);
         // Add code to update sponsor table here
         $insertQuery = "INSERT INTO sponsors VALUES ";
     } else {

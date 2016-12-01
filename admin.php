@@ -84,10 +84,12 @@ if($adminRow['idadmin'] == "") {
               <h3>Sponsor Editor</h3>
               <form action="adminScripts/sponsorEditor.php" method="post" enctype="multipart/form-data">
                 Select image to upload:
-                <input type="file" name="fileToUpload" id="fileToUpload">
-                <textarea class="form-control" rows="1" id="sponName" name="Sponsor Name"></textarea>
-                <textarea class="form-control" rows="1" id="sideName" name="Sidebar Name"></textarea>
-                <input type="submit" value="Upload Image" name="submit">
+                <div class="form-group">
+                  <input type="file" name="fileToUpload" id="fileToUpload">
+                  <textarea class="form-control" rows="1" id="spon" name="sponName"></textarea>
+                  <textarea class="form-control" rows="1" id="side" name="sideName"></textarea>
+                  <input type="submit" value="Upload Image" name="submit">
+                </div>
               </form>
               <br><br><br>
             </div>
