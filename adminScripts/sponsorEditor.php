@@ -4,6 +4,7 @@ $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
+include_once ('../dbconnect.php');
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
@@ -43,8 +44,10 @@ if ($uploadOk == 0) {
         // Add code to update sponsor table here
         $sponname = $_POST['sponName'];
         $sidename = $_POST['sideName'];
-        $insertQuery = "INSERT INTO sponsors (imgpath, sponsorName, sidebarName) VALUES($target_file, $sponname, $sidename)";
+        $insertQuery = "INSERT INTO sponsors (imgpath, sponsorName, sidebarName) VALUES('$target_file', '$sponname', '$sidename')";
+        echo $insertQuery;
         $res = mysql_query($insertQuery);
+        echo mysql_error();
     } else {
         echo "Sorry, there was an error uploading your file.";
         echo "</p>";
