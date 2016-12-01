@@ -45,7 +45,7 @@ if ($uploadOk == 0) {
         $sponname = $_POST['sponName'];
         $sidename = $_POST['sideName'];
         $insertQuery = "INSERT INTO sponsors (imgpath, sponsorName, sidebarName) VALUES('$target_file', '$sponname', '$sidename')";
-        echo $insertQuery;
+        // echo $insertQuery;
         $res = mysql_query($insertQuery);
         echo mysql_error();
     } else {
