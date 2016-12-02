@@ -101,92 +101,29 @@ if(isset($_SESSION['user'])) {
       $flag = 1;
       $count = 0;
       while($row = mysql_fetch_array($res)) {
+        echo $row['imgpath'];
         if($flag == 1) {
           echo "<div id='$count' class='tab-pane fade in active'>";
-          echo "<h3>$row['sidebarName']</h3>";
-          echo "<h4>$row['sponsorName']</h4>";
-          echo "<img class='img-response' src='adminScripts/$row['imgPath']'>";
+          echo '<h3>'.$row['sidebarName'].'</h3>';
+          echo '<h4>'.$row['sponsorName'].'</h4>';
+          echo '<img class="img-responsive" src="adminScripts/'.$row['imgpath'].'">';
           echo "<br><br><br>";
           echo "</div>";
           $flag = 0;
+          $count = $count + 1;
         }
         else {
           echo "<div id='$count' class='tab-pane fade'>";
-          echo "<h3>$row['sidebarName']</h3>";
-          echo "<h4>$row['sponsorName']</h4>";
-          echo "<img class='img-response' src='adminScripts/$row['imgPath']'>";
+          echo '<h3>'.$row['sidebarName'].'</h3>';
+          echo '<h4>'.$row['sponsorName'].'</h4>';
+          echo '<img class="img-responsive" src="adminScripts/'.$row['imgpath'].'">';
           echo "<br><br><br>";
           echo "</div>";
+          $count = $count + 1;
         }
       }
       echo "</div></div>";
      ?>
-<!-- This will display information about the objectives, program, and purpose of the program. -->
-    <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
-      <li class="active"><a data-toggle="tab" href="#Presenting">Presenting Sponsor</a></li>
-      <li><a data-toggle="tab" href="#Opening">Opening Reception</a></li>
-      <li><a data-toggle="tab" href="#Education">Education Day</a></li>
-      <li><a data-toggle="tab" href="#Business">Business Day</a></li>
-      <li><a data-toggle="tab" href="#History">History Day</a></li>
-      <li><a data-toggle="tab" href="#Quality">Quality of Life Day</a></li>
-      <li><a data-toggle="tab" href="#Government">Government Day</a></li>
-      <li><a data-toggle="tab" href="#Media">Media &amp; Entertainment Day</a></li>
-      <li><a data-toggle="tab" href="#Retreat">Closing Retreat and Graduation</a></li>
-      <li><a data-toggle="tab" href="#Support">Supporting Sponsors and In-Kind</a></li>
-    </ul>
-    <div class="col-md-9">
-      <div class="tab-content">
-        <div id="Presenting" class="tab-pane fade in active">
-          <h3>Presenting Sponsor</h3>
-            <h4>Nissan North America</h4>
-            <img class="img-responsive" src="sponsorimg/Nissan-logo.png" alt="Nissan Logo" height=>
-          <br><br><br>
-        </div>
-        <div id="Opening" class="tab-pane fade">
-          <h3>Opening Reception</h3>
-            <h4>BancorpSouth</h4>
-            <img class="img-responsive" src="sponsorimg/bancorpsouth-inc-logo.jpg" alt="BancorpSouth Logo">
-          <br><br><br>
-        </div>
-        <div id="Education" class="tab-pane fade">
-          <h3>Education Day</h3>
-          <h4>LBMC</h4>
-          <img class="img-responsive" src="sponsorimg/LBMC.png" alt="LBMC Logo">
-        </div>
-        <div id="Business" class="tab-pane fade">
-          <h3>Business Day</h3>
-          <h4>SVN Commercial Realtors</h4>
-        </div>
-        <div id="History" class="tab-pane fade">
-          <h3>History Day</h3>
-          <h4>Pinnacle Financial Partners</h4>
-          <img class="img-responsive" src="sponsorimg/FinancialPartnersColor_calogo1499.jpg" alt="Pinnacle Financial Partners Logo">
-        </div>
-        <div id="Quality" class="tab-pane fade">
-          <h3>Quality of Life Day</h3>
-          <h4>None</h4>
-        </div>
-        <div id="Government" class="tab-pane fade">
-          <h3>Government Day</h3>
-          <h4>None</h4>
-        </div>
-        <div id="Media" class="tab-pane fade">
-          <h3>Media &amp; Entertainment Day</h3>
-          <h4>None</h4>
-        </div>
-        <div id="Retreat" class="tab-pane fade">
-          <h3>Closing Retreat and Graduation</h3>
-          <h4>Skanska</h4>
-          <img class="img-responsive" src="sponsorimg/Skanska-Logo.png" alt="Skanska Logo">
-        </div>
-        <div id="Support" class="tab-pane fade">
-          <h3>Supporting Sponsors and In-Kind</h3>
-          <h4>Brentwood Roesch-Patton Funeral Home</h4>
-          <h4>Zeitlin &amp; Company, Realtors-Linda Hirsch</h4>
-        </div>
-        <br><br><br><br><br>
-      </div>
-    </div>
   <!-- Footer here, can add this to other pages later. -->
   <div class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
