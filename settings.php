@@ -8,6 +8,8 @@ include_once 'dbconnect.php';
 $error = false;
 $res=mysql_query("SELECT * FROM Users WHERE idUsers=".$_SESSION['user']);
 $userRow=mysql_fetch_array($res);
+$adminRes=mysql_query("SELECT * FROM admin WHERE idadmin=".$userRow['idUsers']);
+$adminRow=mysql_fetch_array($adminRes); // Check to see if current user is an admin
 if ( isset($_POST['btn-signup']) ) {
   // Fetch user data
   $email = $userRow['email'];
@@ -95,6 +97,9 @@ if ( isset($_POST['btn-signup']) ) {
           <?php if(!isset($_SESSION['user'])): ?> <!-- Hides these two buttons if logged in. -->
           <li><a href="login.php">Login</a></li>
           <li><a href="register.php">Register</a></li>
+        <?php endif; ?>
+        <?php if($adminRow['isadmin'] == 1): ?> <!-- Display an admin link if the user is an administrator -->
+          <li><a href="admin.php">Admin</a></li>
         <?php endif; ?>
         </ul>
         <?php if(isset($_SESSION['user'])): ?>
