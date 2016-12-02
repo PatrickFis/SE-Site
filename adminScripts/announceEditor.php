@@ -19,5 +19,5 @@
   $newAnnouncement = htmlspecialchars($newAnnouncement, ENT_QUOTES, "UTF-8");
   $updateQuery=mysql_query("UPDATE announcements SET announce='$newAnnouncement' WHERE idannouncements=0");
   // Redirect the user back to the admin page.
-  header("Location: ../admin.php");
+  header("Location: ../admin.php#Announcements");
 ?>
