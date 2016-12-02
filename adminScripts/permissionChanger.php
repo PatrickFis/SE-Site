@@ -6,6 +6,7 @@
   // Fetch information from the database
   $useridQuery = "SELECT * FROM Users WHERE email='$email'";
   $res = mysql_query(useridQuery);
+  echo mysql_error();
   while($row = mysql_fetch_array($res)) {
     $userId = $row['idUsers'];
     $username = $row['username'];
@@ -19,5 +20,5 @@
     }
   }
   // Redirect the user back to the admin page.
-  header("Location: ../admin.php");
+  // header("Location: ../admin.php");
  ?>

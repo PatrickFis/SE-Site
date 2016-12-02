@@ -153,7 +153,7 @@ if($adminRow['idadmin'] == "") {
             <p>Check Google's <a href="https://analytics.google.com/">website</a>
             for website traffic information.</p>
           </div>
-          <div id="adminChanger" class="tab-pane fade">
+          <div id="AdminChanger" class="tab-pane fade">
             <h3>Modify Account</h3>
             <p>Use this tool to change account permissions.</p>
             <form action="adminScripts/permissionChanger.php" method="post">
