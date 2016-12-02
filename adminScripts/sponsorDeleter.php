@@ -13,5 +13,5 @@
   $deleteQuery = "DELETE FROM sponsors WHERE sidebarName = '$deleteme'";
   $res = mysql_query($deleteQuery);
   // Redirect the user back to the admin page.
-  header("Location: ../admin.php#Sponsor");
+  header("Location: ../admin.php");
  ?>

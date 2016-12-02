@@ -73,7 +73,7 @@ if($adminRow['idadmin'] == "") {
         <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
           <li class="active"><a data-toggle="tab" href="#Contact">Contact Editor</a></li>
           <li><a data-toggle="tab" href="#Sponsor">Sponsor Editor</a></li>
-          <li><a data-toggle="tab" href="#Announcements" id="annEdit">Announcement Editor</a></li>
+          <li><a data-toggle="tab" href="#Announcements">Announcement Editor</a></li>
         </ul>
         <div class="col-md-9">
           <div class="tab-content">
