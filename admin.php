@@ -74,7 +74,7 @@ if($adminRow['idadmin'] == "") {
           <li class="active"><a data-toggle="tab" href="#Contact">Contact Editor</a></li>
           <li><a data-toggle="tab" href="#Sponsor">Sponsor Editor</a></li>
           <li><a data-toggle="tab" href="#Announcements">Announcement Editor</a></li>
-          <li><a data-toggle="tab" href="#Email">Mass Email</a></li>
+          <li><a data-toggle="tab" href="#Email">Newsletter</a></li>
         </ul>
         <div class="col-md-9">
           <div class="tab-content">
@@ -141,18 +141,11 @@ if($adminRow['idadmin'] == "") {
             </form>
           </div>
           <div id="Email" class="tab-pane fade">
-            <h3>Mass Emailer</h3>
-            <p>Use this editor to create email announcements for subscribed users.</p>
-            <form action="adminScripts/announceEditor.php" method="post">
-              <div class="form-group">
-                <label for="announce">Email:</label>
-                <textarea class="form-control" rows="5" id="ema" name="email"></textarea>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
-              </div>
-          </form>
-        </div>
+            <h3>Newsletter</h3>
+            <p>The newsletter is handled by Mail Chimp. Please go to their
+            <a href="https://login.mailchimp.com/">website</a> to send the
+            newsletter.</p>
+          </div>
         </div>
       </div>
 
