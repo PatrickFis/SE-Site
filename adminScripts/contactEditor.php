@@ -58,4 +58,6 @@ if ($uploadOk == 0) {
         print "</pre>";
     }
 }
+// Redirect the user back to the admin page.
+header("Location: ../admin.php");
 ?>
