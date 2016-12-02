@@ -48,7 +48,7 @@ if($adminRow['idadmin'] == "") {
           <li><a href="login.php">Login</a></li>
           <li><a href="register.php">Register</a></li>
         <?php endif; ?>
-        <?php if($adminRow['isadmin'] == 1): ?> <!-- Display an admin link if the user is an administrator -->
+        <?php if($adminRow['idadmin'] != ""): ?> <!-- Display an admin link if the user is an administrator -->
           <li class="active"><a href="admin.php">Admin</a></li>
         <?php endif; ?>
         </ul>
