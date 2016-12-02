@@ -170,35 +170,31 @@ if($adminRow['idadmin'] == "") {
               </div>
             </form>
             <br><br><br>
-            <div class="container">
-              <div class="panel-group">
-                <div class="panel panel-default">
-                  <div class="panel-heading">
-                    <h4 class="panel-title">
-                      <a data-toggle="collapse" href="#collapse1">Click to see current administrators</a>
-                    </h4>
-                  </div>
-                  <div id="collapse1" class="panel-collapse collapse">
-                    <ul class="list-group">
-                      <?php
-                        $getAdminQuery = "SELECT adminUsername FROM admin";
-                        $res = mysql_query($getAdminQuery);
-                        while($row = $mysql_fetch_array($res)) {
-                          echo "li class='list-group-item'>".$row['adminUsername']."</li>";
-                        }
-                       ?>
-                    </ul>
-                  </div>
+            <!-- Display current admins in a dropdown panel -->
+            <div class="panel-group">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#collapse1">Click to see current administrators</a>
+                  </h4>
+                </div>
+                <div id="collapse1" class="panel-collapse collapse">
+                  <ul class="list-group">
+                    <?php
+                      $getAdminQuery = "SELECT email FROM Users, admin where Users.idUsers = admin.idadmin";
+                      $admins = mysql_query($getAdminQuery);
+                      // echo mysql_error();
+                      while($adminRow = mysql_fetch_array($admins)) {
+                        echo '<li class="list-group-item">'.$adminRow['email'].'</li>';
+                      }
+                     ?>
+                  </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-
-            <!--form to upload a picture into the database -->
-
 </body>
 </html>
 <?php ob_end_flush(); ?>
