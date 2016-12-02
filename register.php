@@ -121,7 +121,7 @@
           <li><a href="calendar.php">Calendar</a></li>
           <li><a href="contact.php">Contact Us</a></li>
           <li><a href="donate.php">Donate</a></li>
-          <li><a href="sponsers.php">Sponsers</a></li>
+          <li><a href="sponsor.php">Sponsors</a></li>
           <li><a href="login.php">Login</a></li>
           <li clsas = "active"><a href="register.php">Register</a></li>
         </ul>
