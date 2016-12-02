@@ -74,6 +74,7 @@ if(isset($_SESSION['user'])) {
     </nav>
     <div class="container">
       <div class="alert alert-info alert-dismissable fade in">
+        <h3>Announcements</h3>
         <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
         <?php
             $announcementQuery = "SELECT announce FROM announcements WHERE idannouncements=0";
