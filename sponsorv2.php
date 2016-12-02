@@ -90,6 +90,7 @@ if(isset($_SESSION['user'])) {
         }
         else {
           echo '<li><a data-toggle="tab" href=#'.$count.'>'.$row['sidebarName'].'</a></li>';
+          $count = $count + 1;
         }
       }
       echo "</ul>";
@@ -101,7 +102,6 @@ if(isset($_SESSION['user'])) {
       $flag = 1;
       $count = 0;
       while($row = mysql_fetch_array($res)) {
-        echo $row['imgpath'];
         if($flag == 1) {
           echo "<div id='$count' class='tab-pane fade in active'>";
           echo '<h3>'.$row['sidebarName'].'</h3>';
