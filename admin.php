@@ -92,12 +92,32 @@ if($adminRow['idadmin'] == "") {
             <div id="Sponsor" class="tab-pane fade">
               <h3>Sponsor Editor</h3>
               <form action="adminScripts/sponsorEditor.php" method="post" enctype="multipart/form-data">
-                Select image to upload:
+                <p>Select an image for the sponsor.</p>
                 <div class="form-group">
                   <input type="file" name="fileToUpload" id="fileToUpload">
+                  <span class="label-primary">Sponsor Name</span>
                   <textarea class="form-control" rows="1" id="spon" name="sponName"></textarea>
+                  <span class="label-primary">Sidebar Name</span>
                   <textarea class="form-control" rows="1" id="side" name="sideName"></textarea>
                   <input type="submit" value="Upload Image" name="submit">
+                </div>
+              </form>
+              <br><br><br>
+              <h3>Delete Sponsor</h3>
+              <form action="adminScripts/sponsorDeleter.php" method="post">
+                <p>Use this to delete a sponsor from the page.</p>
+                <div class="form-group">
+                  <label for="selectImage">Select Image</label>
+                    <select class="form-control" id="selectImage" name="selImg">
+                      <?php
+                        $populateQuery = "SELECT * FROM sponsors";
+                        $res = mysql_query($populateQuery);
+                        while($row = mysql_fetch_array($res)) {
+                          echo '<option>'.$row['sidebarName'].'</option>';
+                        }
+                      ?>
+                    </select>
+                    <input type="submit" value="Delete">
                 </div>
               </form>
               <br><br><br>
