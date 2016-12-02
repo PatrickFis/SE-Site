@@ -141,6 +141,7 @@ if($adminRow['idadmin'] == "") {
                   <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
                 </div>
             </form>
+            <br><br><br>
           </div>
           <div id="Email" class="tab-pane fade">
             <h3>Newsletter</h3>
@@ -152,6 +153,7 @@ if($adminRow['idadmin'] == "") {
             <h3>Google Analytics</h3>
             <p>Check Google's <a href="https://analytics.google.com/">website</a>
             for website traffic information.</p>
+            <br><br><br>
           </div>
           <div id="AdminChanger" class="tab-pane fade">
             <h3>Modify Account</h3>
@@ -167,7 +169,29 @@ if($adminRow['idadmin'] == "") {
                   <input type="submit" value="Modify Account">
               </div>
             </form>
-            </form>
+            <br><br><br>
+            <div class="container">
+              <div class="panel-group">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" href="#collapse1">Click to see current administrators</a>
+                    </h4>
+                  </div>
+                  <div id="collapse1" class="panel-collapse collapse">
+                    <ul class="list-group">
+                      <?php
+                        $getAdminQuery = "SELECT adminUsername FROM admin";
+                        $res = mysql_query($getAdminQuery);
+                        while($row = $mysql_fetch_array($res)) {
+                          echo "li class='list-group-item'>".$row['adminUsername']."</li>";
+                        }
+                       ?>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
