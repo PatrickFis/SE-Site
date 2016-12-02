@@ -93,15 +93,16 @@ if($adminRow['idadmin'] == "") {
               <br><br><br>
             </div>
             <div id="Sponsor" class="tab-pane fade">
-              <h3>Sponsor Editor</h3>
               <form action="adminScripts/sponsorEditor.php" method="post" enctype="multipart/form-data">
-                <p>Select an image for the sponsor.</p>
+                <h3>Sponsor Editor</h3>
                 <div class="form-group">
                   <input type="file" name="fileToUpload" id="fileToUpload">
-                  <span class="label-primary">Sponsor Name</span>
-                  <textarea class="form-control" rows="1" id="spon" name="sponName"></textarea>
-                  <span class="label-primary">Sidebar Name</span>
-                  <textarea class="form-control" rows="1" id="side" name="sideName"></textarea>
+                  <!-- <div class="input-group"> -->
+                    <input class="form-control" type="text" id="spon" name="sponName" placeholder="Sponsor Name">
+                  <!-- </div> -->
+                  <!-- <div class="input-group"> -->
+                    <input class="form-control" type="text" id="spon" name="sideName" placeholder="Sidebar Name">
+                  <!-- </div> -->
                   <input type="submit" value="Upload Image" name="submit">
                 </div>
               </form>
