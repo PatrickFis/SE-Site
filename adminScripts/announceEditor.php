@@ -15,6 +15,9 @@
     header("Location: ../Main.php");
   }
   $newAnnouncement = $_POST['announce'];
+  $newAnnouncement = trim($newAnnouncement);
+  $newAnnouncement = strip_tags($newAnnouncement);
+  $newAnnouncement = htmlspecialchars($newAnnouncement);
   $updateQuery=mysql_query("UPDATE announcements SET announce='$newAnnouncement' WHERE idannouncements=0");
   // Redirect the user back to the admin page.
   header("Location: ../admin.php");
