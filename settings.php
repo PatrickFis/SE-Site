@@ -118,65 +118,93 @@ if ( isset($_POST['btn-signup']) ) {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-  <div class="container">
+    <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
+      <li class="active"><a data-toggle="tab" href="#pword">Change my Password</a></li>
+      <li><a data-toggle="tab" href="#news">Newsletter Signup</a></li>
+    </ul>
+    <div class="col-md-9">
+      <div class="tab-content">
+        <div id="pword" class="tab-pane fade in active">
+          <h3>Change my Password</h3>
+          <div id="login-form">
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
 
-    <div id="login-form">
-      <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+              <div class="col-md-12">
 
-        <div class="col-md-12">
+                <div class="form-group">
+                  <hr />
+                </div>
 
-          <div class="form-group">
-            <hr />
-          </div>
+                <?php
+                if ( isset($errMSG) ) {
 
-          <?php
-          if ( isset($errMSG) ) {
+                  ?>
+                  <div class="form-group">
+                    <div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
+                      <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
+                    </div>
+                  </div>
+                  <?php
+                }
+                ?>
 
-            ?>
-            <div class="form-group">
-              <div class="alert alert-<?php echo ($errTyp=="success") ? "success" : $errTyp; ?>">
-                <span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" name="oldPass" class="form-control" placeholder="Old Password" maxlength="15" value="<?php echo $email ?>" />
+                  </div>
+                  <span class="text-danger"><?php echo $oldPassError; ?></span>
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                    <input type="password" name="pass" class="form-control" placeholder="New Password" maxlength="15" />
+                  </div>
+                  <span class="text-danger"><?php echo $passError; ?></span>
+                </div>
+
+                <div class="form-group">
+                  <hr />
+                </div>
+
+                <div class="form-group">
+                  <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Change Password</button>
+                </div>
+
+                <div class="form-group">
+                  <hr />
+                </div>
+
               </div>
-            </div>
-            <?php
-          }
-          ?>
 
-
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-              <input type="password" name="oldPass" class="form-control" placeholder="Password" maxlength="15" value="<?php echo $email ?>" />
-            </div>
-            <span class="text-danger"><?php echo $oldPassError; ?></span>
+            </form>
           </div>
-
-          <div class="form-group">
-            <div class="input-group">
-              <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
-              <input type="password" name="pass" class="form-control" placeholder="New Password" maxlength="15" />
-            </div>
-            <span class="text-danger"><?php echo $passError; ?></span>
-          </div>
-
-          <div class="form-group">
-            <hr />
-          </div>
-
-          <div class="form-group">
-            <button type="submit" class="btn btn-block btn-primary" name="btn-signup">Change Password</button>
-          </div>
-
-          <div class="form-group">
-            <hr />
-          </div>
-
         </div>
+        <div id="news" class="tab-pane fade">
+          <!-- Begin MailChimp Signup Form -->
+          <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+          <style type="text/css">
+          	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+          	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+          	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+          </style>
+          <div id="mc_embed_signup">
+          <form action="//222.us14.list-manage.com/subscribe/post?u=04adb189e747ffa76377f49fb&amp;id=657959c55f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+          	<label for="mce-EMAIL">Subscribe to our mailing list</label>
+          	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_04adb189e747ffa76377f49fb_657959c55f" tabindex="-1" value=""></div>
+              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+              </div>
+          </form>
+          </div>
 
-      </form>
-    </div>
-
-  </div>
+          <!--End mc_embed_signup-->
+        </div>
+      </div>
 
 </body>
 </html>

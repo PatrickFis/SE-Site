@@ -141,8 +141,8 @@ if($adminRow['idadmin'] == "") {
             </form>
           </div>
           <div id="Email" class="tab-pane fade">
-            <h3>Announcement Editor</h3>
-            <p>Use this editor to create dismissible announcements for the main page of your website.</p>
+            <h3>Mass Emailer</h3>
+            <p>Use this editor to create email announcements for subscribed users.</p>
             <form action="adminScripts/announceEditor.php" method="post">
               <div class="form-group">
                 <label for="announce">Email:</label>
