@@ -74,6 +74,7 @@ if($adminRow['idadmin'] == "") {
           <li class="active"><a data-toggle="tab" href="#Contact">Contact Editor</a></li>
           <li><a data-toggle="tab" href="#Sponsor">Sponsor Editor</a></li>
           <li><a data-toggle="tab" href="#Announcements">Announcement Editor</a></li>
+          <li><a data-toggle="tab" href="#Email">Mass Email</a></li>
         </ul>
         <div class="col-md-9">
           <div class="tab-content">
@@ -138,6 +139,23 @@ if($adminRow['idadmin'] == "") {
                   <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
                 </div>
             </form>
+          </div>
+          <div id="Email" class="tab-pane fade">
+            <h3>Announcement Editor</h3>
+            <p>Use this editor to create dismissible announcements for the main page of your website.</p>
+            <form action="adminScripts/announceEditor.php" method="post">
+              <div class="form-group">
+                <label for="announce">Email:</label>
+                <textarea class="form-control" rows="5" id="ema" name="email"></textarea>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
+              </div>
+          </form>
+        </div>
+        </div>
+      </div>
+
 
             <!--form to upload a picture into the database -->
 
