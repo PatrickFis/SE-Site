@@ -75,6 +75,8 @@ if($adminRow['idadmin'] == "") {
           <li><a data-toggle="tab" href="#Sponsor">Sponsor Editor</a></li>
           <li><a data-toggle="tab" href="#Announcements">Announcement Editor</a></li>
           <li><a data-toggle="tab" href="#Email">Newsletter</a></li>
+          <li><a data-toggle="tab" href="#Analytics">Google Analytics</a></li>
+          <li><a data-toggle="tab" href="#AdminChanger">Account Type Changer</a></li>
         </ul>
         <div class="col-md-9">
           <div class="tab-content">
@@ -145,6 +147,27 @@ if($adminRow['idadmin'] == "") {
             <p>The newsletter is handled by Mail Chimp. Please go to their
             <a href="https://login.mailchimp.com/">website</a> to send the
             newsletter.</p>
+          </div>
+          <div id="Analytics" class="tab-pane fade">
+            <h3>Google Analytics</h3>
+            <p>Check Google's <a href="https://analytics.google.com/">website</a>
+            for website traffic information.</p>
+          </div>
+          <div id="adminChanger" class="tab-pane fade">
+            <h3>Modify Account</h3>
+            <p>Use this tool to change account permissions.</p>
+            <form action="adminScripts/permissionChanger.php" method="post">
+              <div class="form-group">
+                <input class="form-control" type="email" id="em" name="acctEmail" placeholder="someone@somewhere.com">
+                <label for="selectType">Select Type</label>
+                  <select class="form-control" id="selectType" name="selType">
+                    <option>Administrator</option>
+                    <option>Normal User</option>
+                  </select>
+                  <input type="submit" value="Modify Account">
+              </div>
+            </form>
+            </form>
           </div>
         </div>
       </div>
