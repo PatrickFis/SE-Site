@@ -76,8 +76,17 @@ if($adminRow['idadmin'] == "") {
           <div class="tab-content">
             <div id="Contact" class="tab-pane fade in active">
               <h3>Contact Editor</h3>
-                <p>After uploading a picture to the img directory, use this tool to
-                add it to the slideshow.</p>
+              <form action="adminScripts/contactEditor.php" method="post" enctype="multipart/form-data">
+                Select image to upload:
+                <div class="form-group">
+                  <input type="file" name="fileToUpload" id="fileToUpload">
+                  <textarea class="form-control" rows="1" id="cap" name="caption"></textarea>
+                  <textarea class="form-control" rows="1" id="addr" name="address"></textarea>
+                  <textarea class="form-control" rows="1" id="phn" name="phone"></textarea>
+                  <textarea class="form-control" rows="1" id="eml" name="email"></textarea>
+                  <input type="submit" value="Upload Image" name="submit">
+                </div>
+              </form>
               <br><br><br>
             </div>
             <div id="Sponsor" class="tab-pane fade">
@@ -106,10 +115,8 @@ if($adminRow['idadmin'] == "") {
                   <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
                 </div>
             </form>
-            </div>
-            <br><br><br><br><br>
-          </div>
-        </div>
+
+            <!--form to upload a picture into the database -->
 
 </body>
 </html>
