@@ -80,13 +80,46 @@ if(isset($_SESSION['user'])) {
       $res = mysql_query($selectQuery);
       $flag = 1;
       $count = 0;
-      echo "<ul class="nav nav-tabs-no-style nav-stacked col-md-3">";
+      // Create the sidebar
+      echo "<ul class='nav nav-tabs-no-style nav-stacked col-md-3'>";
       while($row = mysql_fetch_array($res)) {
         if($flag == 1) {
           echo '<li class="active"><a data-toggle="tab" href=#'.$count.'>'.$row['sidebarName'].'</a></li>';
+          $flag = 0;
+          $count = $count + 1;
+        }
+        else {
+          echo '<li><a data-toggle="tab" href=#'.$count.'>'.$row['sidebarName'].'</a></li>';
         }
       }
       echo "</ul>";
+      // Create the tab content
+      echo "<div class='col-md-9'>";
+      echo "<div class='tab-content'>";
+      // Go back to start of results
+      mysql_data_seek($res, 0);
+      $flag = 1;
+      $count = 0;
+      while($row = mysql_fetch_array($res)) {
+        if($flag == 1) {
+          echo "<div id='$count' class='tab-pane fade in active'>";
+          echo "<h3>$row['sidebarName']</h3>";
+          echo "<h4>$row['sponsorName']</h4>";
+          echo "<img class='img-response' src='adminScripts/$row['imgPath']'>";
+          echo "<br><br><br>";
+          echo "</div>";
+          $flag = 0;
+        }
+        else {
+          echo "<div id='$count' class='tab-pane fade'>";
+          echo "<h3>$row['sidebarName']</h3>";
+          echo "<h4>$row['sponsorName']</h4>";
+          echo "<img class='img-response' src='adminScripts/$row['imgPath']'>";
+          echo "<br><br><br>";
+          echo "</div>";
+        }
+      }
+      echo "</div></div>";
      ?>
 <!-- This will display information about the objectives, program, and purpose of the program. -->
     <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
