@@ -128,8 +128,7 @@ if($adminRow['idadmin'] == "") {
             </div>
             <div id="Announcements" class="tab-pane fade">
               <h3>Announcement Editor</h3>
-              <p>Use this editor to create announcements for the main page of your website.</p>
-              <p>Messages can be styled using HTML tags.</p>
+              <p>Use this editor to create dismissible announcements for the main page of your website.</p>
               <form action="adminScripts/announceEditor.php" method="post">
                 <div class="form-group">
                   <label for="announce">Announcement:</label>
