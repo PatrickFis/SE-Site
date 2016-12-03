@@ -41,6 +41,11 @@ background-color: rgba(70,70,70,.25);
 .carousel-indicators .active {
 background-color: #000000;
 }
+.carousel-caption {
+position: relative;
+left: auto;
+right: auto;
+}
 </style>
 </head>
 <body>
@@ -117,6 +122,9 @@ background-color: #000000;
               {
                 echo '<div class="item' .($flag?' active':''). ' ">';
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
+                echo '</div>';
+                echo '<div class="carousel-caption">';
+                echo $row['caption'];
                 echo '</div>';
                 $flag = 0;
               }
