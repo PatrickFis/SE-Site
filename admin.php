@@ -86,10 +86,10 @@ if($adminRow['idadmin'] == "") {
                 Select image to upload:
                 <div class="form-group">
                   <input type="file" name="fileToUpload" id="fileToUpload">
-                  <textarea class="form-control" rows="1" id="cap" name="caption"></textarea>
-                  <textarea class="form-control" rows="1" id="addr" name="address"></textarea>
-                  <textarea class="form-control" rows="1" id="phn" name="phone"></textarea>
-                  <textarea class="form-control" rows="1" id="eml" name="email"></textarea>
+                  <textarea class="form-control" rows="1" id="cap" name="caption" placeholder="Image Caption"></textarea>
+                  <textarea class="form-control" rows="1" id="addr" name="address" placeholder = "Address"></textarea>
+                  <textarea class="form-control" rows="1" id="phn" name="phone" placeholder="Phone Number"></textarea>
+                  <textarea class="form-control" rows="1" id="eml" name="email" placeholder="Email"></textarea>
                   <input type="submit" value="Upload Image" name="submit">
                 </div>
               </form>
