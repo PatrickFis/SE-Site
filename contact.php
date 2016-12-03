@@ -119,13 +119,13 @@ background-color: #000000;
               {
                 echo '<div class="item' .($flag?' active':''). '">'.PHP_EOL."\t\t";
                 echo '<img src="adminScripts/'.$row['imgpath'].'">';
-                echo '</div>'
+                echo '</div>';
                 $flag = 0;
               }
               else{
                 echo '<div class="item' '">'.PHP_EOL."\t\t";
                 echo '<img src="adminScripts/'.$row['imgpath'].'">';
-                echo '</div>'
+                echo '</div>';
               }
             }
            ?>
