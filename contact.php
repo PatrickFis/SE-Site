@@ -93,11 +93,11 @@ background-color: #000000;
       <br>
       <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
         <!-- Indicators -->
-        <ol class="carousel-indicators">
+        <!-- <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
           <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+        </ol> -->
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <?php
@@ -115,8 +115,18 @@ background-color: #000000;
             $flag = 1;
             while($row = mysql_fetch_array($qry))
             {
+              if(flag == 1)
+              {
+                echo '<div class="item' .($flag?' active':''). '">'.PHP_EOL."\t\t";
                 echo '<img src="adminScripts/'.$row['imgpath'].'">';
+                echo '</div>'
                 $flag = 0;
+              }
+              else{
+                echo '<div class="item' '">'.PHP_EOL."\t\t";
+                echo '<img src="adminScripts/'.$row['imgpath'].'">';
+                echo '</div>'
+              }
             }
            ?>
           <!-- <div class="item active">
