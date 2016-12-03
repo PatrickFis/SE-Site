@@ -28,11 +28,9 @@ if(isset($_SESSION['user'])) {
 <style>
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-    width: auto;
-    height: auto;
+    width: 800px;
+    height: 800px;
     margin: auto;
-    max-height: 400px;
-    max-width: 400px;
     overflow: hidden;
 }
 .carousel-indicators li {
@@ -117,14 +115,14 @@ background-color: #000000;
             {
               if($flag == 1)
               {
-                echo '<div class="item' .($flag?' active':''). '">';
-                echo '<img src="adminScripts/'.$row['imgpath'].'">';
+                echo '<div class="item' .($flag?' active':''). ' ">';
+                echo '<img src="adminScripts/'.$row['imgpath'].' ">';
                 echo '</div>';
                 $flag = 0;
               }
               else{
                 echo '<div class="item">';
-                echo '<img src="adminScripts/'.$row['imgpath'].'">';
+                echo '<img src="adminScripts/'.$row['imgpath'].' width="460" height="345" ">';
                 echo '</div>';
               }
             }
