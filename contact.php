@@ -28,8 +28,8 @@ if(isset($_SESSION['user'])) {
 <style>
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-    width: 450;
-    height: 300;
+    width: 450px;
+    height: 300px;
     margin: auto;
     overflow: hidden;
 }
