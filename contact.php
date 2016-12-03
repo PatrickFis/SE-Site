@@ -124,13 +124,14 @@ right: auto;
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
                 echo '</div>';
                 echo '<div class="carousel-caption">';
-                echo $row['caption'];
+                echo '<h3>'.$row['caption'].'</h3>';
                 echo '</div>';
                 $flag = 0;
               }
               else{
                 echo '<div class="item">';
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
+                echo '<h3>'.$row['caption'].'</h3>';
                 echo '</div>';
               }
             }
