@@ -160,6 +160,7 @@ if($adminRow['idadmin'] == "") {
             <p>Use this tool to change account permissions.</p>
             <form action="adminScripts/permissionChanger.php" method="post">
               <div class="form-group">
+                <label for="em">Email Address</label>
                 <input class="form-control" type="email" id="em" name="acctEmail" placeholder="someone@somewhere.com">
                 <label for="selectType">Select Type</label>
                   <select class="form-control" id="selectType" name="selType">
