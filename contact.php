@@ -31,8 +31,8 @@ if(isset($_SESSION['user'])) {
     width: auto;
     height: auto;
     margin: auto;
-    max-height: 400px;
-    max-width: 400px;
+    max-height: 800px;
+    max-width: 800px;
     overflow: hidden;
 }
 .carousel-indicators li {
