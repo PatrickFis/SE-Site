@@ -115,7 +115,7 @@ background-color: #000000;
             $flag = 1;
             while($row = mysql_fetch_array($qry))
             {
-              if(flag == 1)
+              if($flag == 1)
               {
                 echo '<div class="item' .($flag?' active':''). '">';
                 echo '<img src="adminScripts/'.$row['imgpath'].'">';
