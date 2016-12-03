@@ -28,8 +28,8 @@ if(isset($_SESSION['user'])) {
 <style>
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
-    width: 400px;
-    height: 300px;
+    width: 450;
+    height: 300;
     margin: auto;
     overflow: hidden;
 }
@@ -122,7 +122,7 @@ background-color: #000000;
               }
               else{
                 echo '<div class="item">';
-                echo '<img src="adminScripts/'.$row['imgpath'].' width="460" height="345" ">';
+                echo '<img src="adminScripts/'.$row['imgpath'].' ">';
                 echo '</div>';
               }
             }
