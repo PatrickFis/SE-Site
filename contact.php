@@ -131,8 +131,10 @@ right: auto;
               else{
                 echo '<div class="item">';
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
-                echo '<h3>'.$row['caption'].'</h3>';
                 echo '</div>';
+                echo '<div class="carousel-caption">';
+                echo '<h3>'.$row['caption'].'</h3>';
+                echo "</div>";
               }
             }
            ?>
