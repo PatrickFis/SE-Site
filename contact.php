@@ -103,13 +103,20 @@ background-color: #000000;
           <?php
             // This code pulls a list of images for the img directory and then
             // generates code
-            $dirname = "img/";
-            $images = glob($dirname."*.jpg");
-            $flag = 1; // Make the first item active
-            foreach($images as $image) {
-              echo '<div class="item' .($flag?' active':''). '">'.PHP_EOL."\t\t";
-              echo '<img src="'.$image.'" alt=""></div>'.PHP_EOL."\t";
-              $flag = 0;
+            // $dirname = "img/";
+            // $images = glob($dirname."*.jpg");
+            // $flag = 1; // Make the first item active
+            // foreach($images as $image) {
+            //   echo '<div class="item' .($flag?' active':''). '">'.PHP_EOL."\t\t";
+            //   echo '<img src="'.$image.'" alt=""></div>'.PHP_EOL."\t";
+            //   $flag = 0;
+            // }
+            $qry = mysql_query("SELECT * FROM contact");
+            $flag = 1;
+            while($row = mysql_fetch_array($qry))
+            {
+                echo '<img src="adminScripts/'.$row['imgpath'].'">';
+                $flag = 0;
             }
            ?>
           <!-- <div class="item active">
