@@ -76,6 +76,7 @@ if($adminRow['idadmin'] == "") {
           <li><a data-toggle="tab" href="#Email">Newsletter</a></li>
           <li><a data-toggle="tab" href="#Analytics">Google Analytics</a></li>
           <li><a data-toggle="tab" href="#AdminChanger">Account Type Changer</a></li>
+          <li><a data-toggle="tab" href="#ClassChanger">Class Editor</a></li>
         </ul>
         <div class="col-md-9">
           <div class="tab-content">
@@ -212,6 +213,23 @@ if($adminRow['idadmin'] == "") {
             </div>
             <br><br><br>
           </div>
+          <div id="ClassChanger" class="tab-pane fade">
+            <h3>Announcement Editor</h3>
+            <p>Use this editor to create dismissible announcements for the main page of your website.</p>
+            <form action="adminScripts/classEditor.php" method="post">
+              <div class="form-group">
+                <label for="name">Add a new class member:</label>
+                <input class="form-control" type="text" id="name" name="name" placeholder="Name">
+                <input class="form-control" type="text" id="company" name="company" placeholder="Company">
+                <input class="form-control" type="text" id="title" name="title" placeholder="Title">
+                <input class="form-control" type="text" id="year" name="year" placeholder="Year">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
+              </div>
+          </form>
+          <br><br><br>
+        </div>
         </div>
       </div>
       <!-- Footer -->
