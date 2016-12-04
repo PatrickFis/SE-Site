@@ -142,7 +142,6 @@ if($adminRow['idadmin'] == "") {
                       ?>
                     </select>
                     <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Sponsor</button>
-                    <input type="submit" value="Delete">
                 </div>
               </form>
               <br><br><br>
