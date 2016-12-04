@@ -123,19 +123,19 @@ right: auto;
               {
                 echo '<div class="item' .($flag?' active':''). ' ">';
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
-                echo '</div>';
                 echo '<div class="carousel-caption">';
                 echo '<h3>'.$cap.'</h3>';
+                echo '</div>';
                 echo '</div>';
                 $flag = 0;
               }
               else{
                 echo '<div class="item">';
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
-                echo '</div>';
                 echo '<div class="carousel-caption">';
                 echo '<h3>'.$cap.'</h3>';
                 echo "</div>";
+                echo '</div>';
               }
             }
            ?>
