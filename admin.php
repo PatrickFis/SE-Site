@@ -213,6 +213,7 @@ if($adminRow['idadmin'] == "") {
         </div>
       </div>
       <!-- Footer -->
+      <br><br><br>
       <div class="navbar navbar-default navbar-fixed-bottom">
           <div class="container">
             <p class="navbar-text pull-left">© 2016 - All rights reserved – Williamson County Chamber Foundation, an affiliate of the Williamson County Chamber of Commerce</p>
