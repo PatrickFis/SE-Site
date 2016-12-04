@@ -63,6 +63,9 @@ position: relative;
 left: auto;
 right: auto;
 }
+.carousel-caption h3 {
+color: black;
+}
 </style>
 </head>
 <body>
@@ -153,12 +156,18 @@ right: auto;
             while($row = mysql_fetch_array($qry))
             {
               $cap = $row['caption'];
+              $add = $row['address'];
+              $phn = $row['phoneNum'];
+              $eml = $row['email'];
               if($flag == 1)
               {
                 echo '<div class="item' .($flag?' active':''). ' ">';
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
                 echo '<div class="carousel-caption">';
                 echo '<h3>'.$cap.'</h3>';
+                echo'<h3>'.$add.'</h3>';
+                echo'<h3>'.$phn.'</h3>';
+                echo'<h3>'.$eml.'</h3>';
                 echo '</div>';
                 echo '</div>';
                 $flag = 0;
@@ -168,6 +177,9 @@ right: auto;
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
                 echo '<div class="carousel-caption">';
                 echo '<h3>'.$cap.'</h3>';
+                echo'<h3>'.$add.'</h3>';
+                echo'<h3>'.$phn.'</h3>';
+                echo'<h3>'.$eml.'</h3>';
                 echo "</div>";
                 echo '</div>';
               }
