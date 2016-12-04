@@ -229,6 +229,23 @@ if($adminRow['idadmin'] == "") {
               </div>
           </form>
           <br><br><br>
+          <h3>Delete Class Member</h3>
+          <form action="adminScripts/classDeleter.php" method="post">
+            <p>Use this to delete a class member.</p>
+            <div class="form-group">
+              <label for="selectClass">Select Class Member</label>
+                <select class="form-control" id="selectClass" name="selCls">
+                  <?php
+                    $populateQuery = "SELECT * FROM clsasMembers";
+                    $res = mysql_query($populateQuery);
+                    while($row = mysql_fetch_array($res)) {
+                      echo '<option>'.$row['name'].'</option>';
+                    }
+                  ?>
+                </select>
+                <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Class Member</button>
+            </div>
+          </form>
         </div>
         </div>
       </div>
