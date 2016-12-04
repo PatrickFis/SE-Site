@@ -26,6 +26,10 @@ if(isset($_SESSION['user'])) {
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!-- fix image sizes -->
 <style>
+#myCarousel {
+  margin-left: 30px;
+  margin-right: 30px;
+}
 .carousel-inner > .item > img,
 .carousel-inner > .item > a > img {
     width: 450px;
@@ -163,16 +167,16 @@ right: auto;
           <div class="item">
             <img src="img/leadership_shirt.jpg" alt="shirt" width="460" height="345">
           </div> -->
-
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
     </div>
 </body>
 </html>
