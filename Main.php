@@ -124,13 +124,13 @@ if(isset($_SESSION['user'])) {
         <div id="Purpose" class="tab-pane fade">
           <h3>Purpose</h3>
           <p>To identify and educate present and future leaders and integrate them into the Brentwood community.</p>
+          <br><br><br><br><br>
         </div>
-        <br><br><br><br><br>
         <div id="FAQ" class="tab-pane fade">
           <h3>FAQ/Brochure</h3>
           <p>Our brochure can be accessed by clicking this <a href="http://www.leadershipbrentwood.org/lead-brent/index_12_3305950585.pdf">link</a>.</p>
+          <br><br><br><br><br>
         </div>
-        <br><br><br><br><br>
         <div id="Class" class="tab-pane fade">
 
         </div>
