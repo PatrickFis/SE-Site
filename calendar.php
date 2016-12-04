@@ -70,7 +70,10 @@ if(isset($_SESSION['user'])) {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-	<div>
+    <div class="hidden-lg hidden-md visible-sm visible-xs">
+      <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&title=Brentwood%20Leadership&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=America%2FChicago" style="border-width:0" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
+    </div>
+	<div class="visible-lg visible-md hidden-sm hidden-xs">
         <div align="middle">
                 <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&ctz=America/Chicago" style="border: 0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
