@@ -204,7 +204,12 @@ color: black;
         </div>
         <div class="col-md-6">
           <h3>Business Information</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>5005 Meridian Boulevard</p>
+          <p>Suite 150</p>
+          <p>Franklin, TN 37067</p>
+          <p>Phone number: <a href="tel:6157711912">(615) 771-1912</a></p>
+          <p>Contact: Lynn Tucker</p>
+          <p><a href="mailto:lynn@williamsonchamber.com">lynn@williamsonchamber.com</a></p>
         </div>
       </div>
     </div>
