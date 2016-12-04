@@ -214,8 +214,8 @@ if($adminRow['idadmin'] == "") {
             <br><br><br>
           </div>
           <div id="ClassChanger" class="tab-pane fade">
-            <h3>Announcement Editor</h3>
-            <p>Use this editor to create dismissible announcements for the main page of your website.</p>
+            <h3>Class Editor</h3>
+            <p>Use this editor to add new members to your class.</p>
             <form action="adminScripts/classEditor.php" method="post">
               <div class="form-group">
                 <label for="name">Add a new class member:</label>
