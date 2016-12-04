@@ -75,7 +75,7 @@ if(isset($_SESSION['user'])) {
     </div>
 	<div class="visible-lg visible-md hidden-sm hidden-xs">
         <div align="middle">
-                <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&ctz=America/Chicago" style="border: 0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>
+                <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&ctz=America/Chicago&amp;title=Brentwood%20Leadership" style="border: 0" width="1000" height="600" frameborder="0" scrolling="no"></iframe>
         </div>
 </div>
 
