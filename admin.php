@@ -131,7 +131,7 @@ if($adminRow['idadmin'] == "") {
               <form action="adminScripts/sponsorDeleter.php" method="post">
                 <p>Use this to delete a sponsor from the page.</p>
                 <div class="form-group">
-                  <label for="selectImage">Select Image</label>
+                  <label for="selectImage">Select Sponsor</label>
                     <select class="form-control" id="selectImage" name="selImg">
                       <?php
                         $populateQuery = "SELECT * FROM sponsors";
