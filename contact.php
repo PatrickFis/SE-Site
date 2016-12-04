@@ -118,7 +118,7 @@ right: auto;
             $flag = 1;
             while($row = mysql_fetch_array($qry))
             {
-              $cap = .$row['caption'];
+              $cap = $row['caption'];
               if($flag == 1)
               {
                 echo '<div class="item' .($flag?' active':''). ' ">';
