@@ -90,6 +90,8 @@ if($adminRow['idadmin'] == "") {
                   <input class="form-control" id="addr" name="address" placeholder = "Address"></textarea>
                   <input class="form-control" id="phn" name="phone" placeholder="Phone Number"></textarea>
                   <input class="form-control" id="eml" name="email" placeholder="Email"></textarea>
+                </div>
+                <div class="form-group">
                   <button type="submit" class="btn btn-block btn-primary" name="submit">Upload Image</button>
                 </div>
               </form>
@@ -108,6 +110,8 @@ if($adminRow['idadmin'] == "") {
                       }
                      ?>
                   </select>
+                </div>
+                <div class="form-group">
                   <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Contact</button>
                 </div>
               </form>
@@ -124,6 +128,8 @@ if($adminRow['idadmin'] == "") {
                   <!-- <div class="input-group"> -->
                     <input class="form-control" type="text" id="spon" name="sideName" placeholder="Sidebar Name">
                   <!-- </div> -->
+                </div>
+                <div class="form-group">
                   <button type="submit" class="btn btn-block btn-primary" name="submit">Upload Image</button>
                 </div>
               </form>
@@ -142,7 +148,9 @@ if($adminRow['idadmin'] == "") {
                         }
                       ?>
                     </select>
-                    <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Sponsor</button>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Sponsor</button>
+                    </div>
                 </div>
               </form>
               <br><br><br>
@@ -193,7 +201,9 @@ if($adminRow['idadmin'] == "") {
                     <option>Administrator</option>
                     <option>Normal User</option>
                   </select>
-                  <button type="submit" class="btn btn-block btn-primary" name="submit">Modify Account</button>
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-block btn-primary" name="submit">Modify Account</button>
+                  </div>
               </div>
             </form>
             <br><br><br>
@@ -251,7 +261,9 @@ if($adminRow['idadmin'] == "") {
                     }
                   ?>
                 </select>
-                <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Class Member</button>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Class Member</button>
+                </div>
             </div>
           </form>
         </div>
