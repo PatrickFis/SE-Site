@@ -132,7 +132,22 @@ if(isset($_SESSION['user'])) {
           <br><br><br><br><br>
         </div>
         <div id="Class" class="tab-pane fade">
-
+          <!--  Display each member in this year's class -->
+          <?php
+              $classQuery = "SELECT * FROM classMembers";
+              $result = mysql_query($classQuery);
+              $flag = 1;
+              while($classRow = mysql_fetch_array($result)) {
+                if($flag == 1) {
+                  echo '<h3>Class of '.$classRow['year'].'</h3>';
+                  echo '<p>'.$classRow['name'].', '.$classRow['company'].', '.$classRow['title'].'</p>';
+                  $flag = 0;
+                }
+                else {
+                  echo '<p>'.$classRow['name'].', '.$classRow['company'].', '.$classRow['title'].'</p>';
+                }
+              }
+           ?>
         </div>
       </div>
     </div>
