@@ -92,7 +92,7 @@ if(isset($_SESSION['user'])) {
       <li><a data-toggle="tab" href="#Program">Program</a></li>
       <li><a data-toggle="tab" href="#Purpose">Purpose</a></li>
     </ul>
-    <div class="col-md-9">
+    <div class="col-md-6">
       <div class="tab-content">
         <div id="Objectives" class="tab-pane fade in active">
           <h3>Objectives</h3>
@@ -124,8 +124,11 @@ if(isset($_SESSION['user'])) {
         </div>
         <br><br><br><br><br>
       </div>
+      <div class="col-md-3">
+        <!--  Small agenda style calendar to the right of the nav-tabs. -->
+        <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&title=Brentwood%20Leadership&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=America%2FChicago" style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>
+      </div>
     </div>
-    <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&title=Brentwood%20Leadership&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=America%2FChicago" style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>
   <!-- Footer here, can add this to other pages later. -->
   <div class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
