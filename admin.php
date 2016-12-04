@@ -69,7 +69,6 @@ if($adminRow['idadmin'] == "") {
       </div>
     </nav>
 
-    <!-- This will display information about the objectives, program, and purpose of the program. -->
         <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
           <li class="active"><a data-toggle="tab" href="#Contact">Contact Editor</a></li>
           <li><a data-toggle="tab" href="#Sponsor">Sponsor Editor</a></li>
@@ -86,14 +85,31 @@ if($adminRow['idadmin'] == "") {
                 Select image to upload:
                 <div class="form-group">
                   <input type="file" name="fileToUpload" id="fileToUpload">
-                  <textarea class="form-control" rows="1" id="cap" name="caption" placeholder="Image Caption"></textarea>
-                  <textarea class="form-control" rows="1" id="addr" name="address" placeholder = "Address"></textarea>
-                  <textarea class="form-control" rows="1" id="phn" name="phone" placeholder="Phone Number"></textarea>
-                  <textarea class="form-control" rows="1" id="eml" name="email" placeholder="Email"></textarea>
+                  <input class="form-control" id="cap" name="caption" placeholder="Image Caption"></textarea>
+                  <input class="form-control" id="addr" name="address" placeholder = "Address"></textarea>
+                  <input class="form-control" id="phn" name="phone" placeholder="Phone Number"></textarea>
+                  <input class="form-control" id="eml" name="email" placeholder="Email"></textarea>
                   <input type="submit" value="Upload Image" name="submit">
                 </div>
               </form>
               <br><br><br>
+              <h3>Delete Contact</h3>
+              <form action="adminScripts/contactDelete.php" method="post">
+                <p>Use this to delete a contact from the page.</p>
+                <div class="form-group">
+                  <label for="selectContact">Select Contact</label>
+                  <select class="form-control" id="selectContact" name="selCon">
+                    <?php
+                      $populateQuery = "SELECT * FROM contact";
+                      $res = mysql_query($populateQuery);
+                      while($row = mysql_fetch_array($res)) {
+                        echo '<option>'.$row['caption'].'</option>';
+                      }
+                     ?>
+                  </select>
+                  <input type="submit" value="Delete">
+                </div>
+              </form>
             </div>
             <div id="Sponsor" class="tab-pane fade">
               <form action="adminScripts/sponsorEditor.php" method="post" enctype="multipart/form-data">
