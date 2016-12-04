@@ -118,13 +118,14 @@ right: auto;
             $flag = 1;
             while($row = mysql_fetch_array($qry))
             {
+              $cap = .$row['caption'];
               if($flag == 1)
               {
                 echo '<div class="item' .($flag?' active':''). ' ">';
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
                 echo '</div>';
                 echo '<div class="carousel-caption">';
-                echo '<h3>'.$row['caption'].'</h3>';
+                echo '<h3>'.$cap.'</h3>';
                 echo '</div>';
                 $flag = 0;
               }
@@ -133,7 +134,7 @@ right: auto;
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
                 echo '</div>';
                 echo '<div class="carousel-caption">';
-                echo '<h3>'.$row['caption'].'</h3>';
+                echo '<h3>'.$cap.'</h3>';
                 echo "</div>";
               }
             }
