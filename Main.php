@@ -125,6 +125,7 @@ if(isset($_SESSION['user'])) {
         <br><br><br><br><br>
       </div>
     </div>
+    <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&title=Brentwood%20Leadership&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=America%2FChicago" style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>
   <!-- Footer here, can add this to other pages later. -->
   <div class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
