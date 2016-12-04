@@ -116,7 +116,7 @@ if($adminRow['idadmin'] == "") {
               <form action="adminScripts/sponsorEditor.php" method="post" enctype="multipart/form-data">
                 <h3>Sponsor Editor</h3>
                 <div class="form-group">
-                  <button type="file" class="btn btn-block btn-primary" name="fileToUpload" id="fileToUpload">Choose Image</button>
+                  <input type="file" name="fileToUpload" id="fileToUpload">
                   <!-- <div class="input-group"> -->
                     <input class="form-control" type="text" id="spon" name="sponName" placeholder="Sponsor Name">
                   <!-- </div> -->
