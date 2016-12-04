@@ -94,7 +94,7 @@ if($adminRow['idadmin'] == "") {
               </form>
               <br><br><br>
               <h3>Delete Contact</h3>
-              <form action="adminScripts/contactDelete.php" method="post">
+              <form action="adminScripts/contactDeleter.php" method="post">
                 <p>Use this to delete a contact from the page.</p>
                 <div class="form-group">
                   <label for="selectContact">Select Contact</label>
