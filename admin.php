@@ -158,6 +158,14 @@ if($adminRow['idadmin'] == "") {
                   <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
                 </div>
             </form>
+            <!--stops displaying the current accouncement-->
+            <br><br><br>
+            <form action = "adminScripts/announceStopDisplay" method = "post">
+            <div class="form-group">
+              <button type="submit" class="btn btn-block btn-primary" name="submit">Stop Displaying Current Announcement</button>
+            </div>
+          </form>
+
             <br><br><br>
           </div>
           <div id="Email" class="tab-pane fade">
