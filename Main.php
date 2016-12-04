@@ -129,7 +129,7 @@ if(isset($_SESSION['user'])) {
     <div class="col-md-3">
       <!--  Small agenda style calendar to the right of the nav-tabs. -->
       <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&title=Brentwood%20Leadership&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=America%2FChicago" style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>
-      <br><br><br>
+      <br><br><br><br><br>
     </div>
   </div>
   <!-- Footer here, can add this to other pages later. -->
