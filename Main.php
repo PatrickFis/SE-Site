@@ -92,6 +92,8 @@ if(isset($_SESSION['user'])) {
       <li class="active"><a data-toggle="tab" href="#Objectives">Objectives</a></li>
       <li><a data-toggle="tab" href="#Program">Program</a></li>
       <li><a data-toggle="tab" href="#Purpose">Purpose</a></li>
+      <li><a data-toggle="tab" href="#FAQ">FAQ/Brochure</a></li>
+      <li><a data-toggle="tab" href="#Class">Class Members</a></li>
     </ul>
     <div class="col-md-6">
       <div class="tab-content">
@@ -103,7 +105,6 @@ if(isset($_SESSION['user'])) {
             <li>Foster an attitude of increased participation and commitment within the community.</li>
             <li>Identify leaders from the civic, educational, government, religious and business communities who will use their leadership knowledge, skills and abilities for the long-term benefit of the  Brentwood community.</li>
           </ul>
-          <br><br><br>
         </div>
         <div id="Program" class="tab-pane fade">
           <h3>Program</h3>
@@ -117,13 +118,33 @@ if(isset($_SESSION['user'])) {
 
               Participants are also given the opportunity to network and develop relationships with other class members and community leaders.
           </p>
-          <br><br><br>
         </div>
         <div id="Purpose" class="tab-pane fade">
           <h3>Purpose</h3>
           <p>To identify and educate present and future leaders and integrate them into the Brentwood community.</p>
         </div>
-        <br><br><br><br><br>
+        <div id="FAQ" class="tab-pane fade">
+          <h3>FAQ/Brochure</h3>
+          <p>Our brochure can be accessed by clicking this <a href="http://www.leadershipbrentwood.org/lead-brent/index_12_3305950585.pdf">link</a>.</p>
+        </div>
+        <div id="Class" class="tab-pane fade">
+          <!--  Display each member in this year's class -->
+          <?php
+              $classQuery = "SELECT * FROM classMembers";
+              $result = mysql_query($classQuery);
+              $flag = 1;
+              while($classRow = mysql_fetch_array($result)) {
+                if($flag == 1) {
+                  echo '<h3>Class of '.$classRow['year'].'</h3>';
+                  echo '<p>'.$classRow['name'].', '.$classRow['company'].', '.$classRow['title'].'</p>';
+                  $flag = 0;
+                }
+                else {
+                  echo '<p>'.$classRow['name'].', '.$classRow['company'].', '.$classRow['title'].'</p>';
+                }
+              }
+           ?>
+        </div>
       </div>
     </div>
     <div class="col-md-3">

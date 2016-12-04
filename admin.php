@@ -76,6 +76,7 @@ if($adminRow['idadmin'] == "") {
           <li><a data-toggle="tab" href="#Email">Newsletter</a></li>
           <li><a data-toggle="tab" href="#Analytics">Google Analytics</a></li>
           <li><a data-toggle="tab" href="#AdminChanger">Account Type Changer</a></li>
+          <li><a data-toggle="tab" href="#ClassChanger">Class Editor</a></li>
         </ul>
         <div class="col-md-9">
           <div class="tab-content">
@@ -220,6 +221,40 @@ if($adminRow['idadmin'] == "") {
             </div>
             <br><br><br>
           </div>
+          <div id="ClassChanger" class="tab-pane fade">
+            <h3>Class Editor</h3>
+            <p>Use this editor to add new members to your class.</p>
+            <form action="adminScripts/classEditor.php" method="post">
+              <div class="form-group">
+                <label for="name">Add a new class member:</label>
+                <input class="form-control" type="text" id="name" name="name" placeholder="Name">
+                <input class="form-control" type="text" id="company" name="company" placeholder="Company">
+                <input class="form-control" type="text" id="title" name="title" placeholder="Title">
+                <input class="form-control" type="text" id="year" name="year" placeholder="Year">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
+              </div>
+          </form>
+          <br><br><br>
+          <h3>Delete Class Member</h3>
+          <form action="adminScripts/classDeleter.php" method="post">
+            <p>Use this to delete a class member.</p>
+            <div class="form-group">
+              <label for="selectClass">Select Class Member</label>
+                <select class="form-control" id="selectClass" name="selCls">
+                  <?php
+                    $populateQuery = "SELECT * FROM classMembers";
+                    $res = mysql_query($populateQuery);
+                    while($row = mysql_fetch_array($res)) {
+                      echo '<option>'.$row['name'].'</option>';
+                    }
+                  ?>
+                </select>
+                <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Class Member</button>
+            </div>
+          </form>
+        </div>
         </div>
       </div>
       <!-- Footer -->
