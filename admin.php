@@ -110,6 +110,7 @@ if($adminRow['idadmin'] == "") {
                   <input type="submit" value="Delete">
                 </div>
               </form>
+              <br><br><br>
             </div>
             <div id="Sponsor" class="tab-pane fade">
               <form action="adminScripts/sponsorEditor.php" method="post" enctype="multipart/form-data">
