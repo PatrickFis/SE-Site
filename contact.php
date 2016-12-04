@@ -37,7 +37,22 @@ if(isset($_SESSION['user'])) {
 background-color: #999;
 background-color: rgba(70,70,70,.25);
 }
-
+.carousel-control {
+  top: 50%;
+}
+.carousel-control.left, .carousel-control.right {
+  background: none;
+  color: @red;
+  border: none;
+}
+.carousel-control.left {
+  margin-left: -45px;
+  color: black;
+}
+.carousel-control.right {
+  margin-right: -45px;
+  color: black;
+}
 .carousel-indicators .active {
 background-color: #000000;
 }
