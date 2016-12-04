@@ -144,7 +144,7 @@ right: auto;
                 echo '<div class="item' .($flag?' active':''). ' ">';
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
                 echo '<div class="carousel-caption">';
-                echo '<h3>''<font color="black">'.$cap.'</font>''</h3>';
+                echo '<h3>'.$cap.'</h3>';
                 echo'<h3>'.$add.'</h3';
                 echo'<h3>'.$phn.'</h3>';
                 echo'<h3>'.$eml.'</h3>';
@@ -157,6 +157,9 @@ right: auto;
                 echo '<img src="adminScripts/'.$row['imgpath'].' ">';
                 echo '<div class="carousel-caption">';
                 echo '<h3>'.$cap.'</h3>';
+                echo'<h3>'.$add.'</h3';
+                echo'<h3>'.$phn.'</h3>';
+                echo'<h3>'.$eml.'</h3>';
                 echo "</div>";
                 echo '</div>';
               }
