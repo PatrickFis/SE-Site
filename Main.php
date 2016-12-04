@@ -87,6 +87,7 @@ if(isset($_SESSION['user'])) {
 
 
 <!-- This will display information about the objectives, program, and purpose of the program. -->
+<div class="row">
     <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
       <li class="active"><a data-toggle="tab" href="#Objectives">Objectives</a></li>
       <li><a data-toggle="tab" href="#Program">Program</a></li>
@@ -124,10 +125,10 @@ if(isset($_SESSION['user'])) {
         </div>
         <br><br><br><br><br>
       </div>
-      <div class="col-md-3">
-        <!--  Small agenda style calendar to the right of the nav-tabs. -->
-        <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&title=Brentwood%20Leadership&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=America%2FChicago" style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>
-      </div>
+    </div>
+    <div class="col-md-3">
+      <!--  Small agenda style calendar to the right of the nav-tabs. -->
+      <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&title=Brentwood%20Leadership&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=America%2FChicago" style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>
     </div>
   <!-- Footer here, can add this to other pages later. -->
   <div class="navbar navbar-default navbar-fixed-bottom">
