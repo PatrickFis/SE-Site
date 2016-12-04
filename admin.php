@@ -89,7 +89,7 @@ if($adminRow['idadmin'] == "") {
                   <input class="form-control" id="addr" name="address" placeholder = "Address"></textarea>
                   <input class="form-control" id="phn" name="phone" placeholder="Phone Number"></textarea>
                   <input class="form-control" id="eml" name="email" placeholder="Email"></textarea>
-                  <input type="submit" value="Upload Image" name="submit">
+                  <button type="submit" class="btn btn-block btn-primary" name="submit">Upload Image</button>
                 </div>
               </form>
               <br><br><br>
@@ -107,7 +107,7 @@ if($adminRow['idadmin'] == "") {
                       }
                      ?>
                   </select>
-                  <input type="submit" value="Delete">
+                  <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Contact</button>
                 </div>
               </form>
               <br><br><br>
@@ -123,7 +123,7 @@ if($adminRow['idadmin'] == "") {
                   <!-- <div class="input-group"> -->
                     <input class="form-control" type="text" id="spon" name="sideName" placeholder="Sidebar Name">
                   <!-- </div> -->
-                  <input type="submit" value="Upload Image" name="submit">
+                  <button type="submit" class="btn btn-block btn-primary" name="submit">Upload Image</button>
                 </div>
               </form>
               <br><br><br>
@@ -141,6 +141,7 @@ if($adminRow['idadmin'] == "") {
                         }
                       ?>
                     </select>
+                    <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Sponsor</button>
                     <input type="submit" value="Delete">
                 </div>
               </form>
@@ -184,7 +185,7 @@ if($adminRow['idadmin'] == "") {
                     <option>Administrator</option>
                     <option>Normal User</option>
                   </select>
-                  <input type="submit" value="Modify Account">
+                  <button type="submit" class="btn btn-block btn-primary" name="submit">Modify Account</button>
               </div>
             </form>
             <br><br><br>
