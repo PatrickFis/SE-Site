@@ -236,7 +236,7 @@ if($adminRow['idadmin'] == "") {
               <label for="selectClass">Select Class Member</label>
                 <select class="form-control" id="selectClass" name="selCls">
                   <?php
-                    $populateQuery = "SELECT * FROM clsasMembers";
+                    $populateQuery = "SELECT * FROM classMembers";
                     $res = mysql_query($populateQuery);
                     while($row = mysql_fetch_array($res)) {
                       echo '<option>'.$row['name'].'</option>';
