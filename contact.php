@@ -112,90 +112,99 @@ color: black;
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+
     <div class="container">
       <br>
-      <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-        <?php
-          $qry = mysql_query("SELECT * FROM contact");
-          $flag = 1;
-          $count = 1;
-          while($row = mysql_fetch_array($qry)) {
-            if($flag == 1) {
-              echo '<li data-target="#myCarousel" data-slide-to="0" class="active"></li>';
-              $flag = 0;
-            }
-            else {
-              echo "<li data-target='#myCarousel' data-slide-to='$count'></li>";
-              $count = $count + 1;
-            }
-          }
-         ?>
-         </ol>
-        <!-- <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol> -->
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-          <?php
-            // This code pulls a list of images for the img directory and then
-            // generates code
-            // $dirname = "img/";
-            // $images = glob($dirname."*.jpg");
-            // $flag = 1; // Make the first item active
-            // foreach($images as $image) {
-            //   echo '<div class="item' .($flag?' active':''). '">'.PHP_EOL."\t\t";
-            //   echo '<img src="'.$image.'" alt=""></div>'.PHP_EOL."\t";
-            //   $flag = 0;
-            // }
-            $qry = mysql_query("SELECT * FROM contact");
-            $flag = 1;
-            while($row = mysql_fetch_array($qry))
-            {
-              $cap = $row['caption'];
-              $add = $row['address'];
-              $phn = $row['phoneNum'];
-              $eml = $row['email'];
-              if($flag == 1)
-              {
-                echo '<div class="item' .($flag?' active':''). ' ">';
-                echo '<img src="adminScripts/'.$row['imgpath'].' ">';
-                echo '<div class="carousel-caption">';
-                echo '<h3>'.$cap.'</h3>';
-                echo'<h3>'.$add.'</h3>';
-                echo'<h3>'.$phn.'</h3>';
-                echo'<h3>'.$eml.'</h3>';
-                echo '</div>';
-                echo '</div>';
-                $flag = 0;
+      <div class="row">
+        <div class="col-md-6">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+            <?php
+              $qry = mysql_query("SELECT * FROM contact");
+              $flag = 1;
+              $count = 1;
+              while($row = mysql_fetch_array($qry)) {
+                if($flag == 1) {
+                  echo '<li data-target="#myCarousel" data-slide-to="0" class="active"></li>';
+                  $flag = 0;
+                }
+                else {
+                  echo "<li data-target='#myCarousel' data-slide-to='$count'></li>";
+                  $count = $count + 1;
+                }
               }
-              else{
-                echo '<div class="item">';
-                echo '<img src="adminScripts/'.$row['imgpath'].' ">';
-                echo '<div class="carousel-caption">';
-                echo '<h3>'.$cap.'</h3>';
-                echo'<h3>'.$add.'</h3>';
-                echo'<h3>'.$phn.'</h3>';
-                echo'<h3>'.$eml.'</h3>';
-                echo "</div>";
-                echo '</div>';
-              }
-            }
-           ?>
-          <!-- <div class="item active">
-            <img src="img/swagger_duder.jpg" alt="dude" width="460" height="345">
-          </div>
+             ?>
+             </ol>
+            <!-- <ol class="carousel-indicators">
+              <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+              <li data-target="#myCarousel" data-slide-to="1"></li>
+              <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol> -->
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <?php
+                // This code pulls a list of images for the img directory and then
+                // generates code
+                // $dirname = "img/";
+                // $images = glob($dirname."*.jpg");
+                // $flag = 1; // Make the first item active
+                // foreach($images as $image) {
+                //   echo '<div class="item' .($flag?' active':''). '">'.PHP_EOL."\t\t";
+                //   echo '<img src="'.$image.'" alt=""></div>'.PHP_EOL."\t";
+                //   $flag = 0;
+                // }
+                $qry = mysql_query("SELECT * FROM contact");
+                $flag = 1;
+                while($row = mysql_fetch_array($qry))
+                {
+                  $cap = $row['caption'];
+                  $add = $row['address'];
+                  $phn = $row['phoneNum'];
+                  $eml = $row['email'];
+                  if($flag == 1)
+                  {
+                    echo '<div class="item' .($flag?' active':''). ' ">';
+                    echo '<img src="adminScripts/'.$row['imgpath'].' ">';
+                    echo '<div class="carousel-caption">';
+                    echo '<h3>'.$cap.'</h3>';
+                    echo'<h3>'.$add.'</h3>';
+                    echo'<h3>'.$phn.'</h3>';
+                    echo'<h3>'.$eml.'</h3>';
+                    echo '</div>';
+                    echo '</div>';
+                    $flag = 0;
+                  }
+                  else{
+                    echo '<div class="item">';
+                    echo '<img src="adminScripts/'.$row['imgpath'].' ">';
+                    echo '<div class="carousel-caption">';
+                    echo '<h3>'.$cap.'</h3>';
+                    echo'<h3>'.$add.'</h3>';
+                    echo'<h3>'.$phn.'</h3>';
+                    echo'<h3>'.$eml.'</h3>';
+                    echo "</div>";
+                    echo '</div>';
+                  }
+                }
+               ?>
+              <!-- <div class="item active">
+                <img src="img/swagger_duder.jpg" alt="dude" width="460" height="345">
+              </div>
 
-          <div class="item">
-            <img src="img/true_manliness.jpg" alt="manliness" width="460" height="345">
-          </div>
+              <div class="item">
+                <img src="img/true_manliness.jpg" alt="manliness" width="460" height="345">
+              </div>
 
-          <div class="item">
-            <img src="img/leadership_shirt.jpg" alt="shirt" width="460" height="345">
-          </div> -->
+              <div class="item">
+                <img src="img/leadership_shirt.jpg" alt="shirt" width="460" height="345">
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h3>Business Information</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
       </div>
     </div>
