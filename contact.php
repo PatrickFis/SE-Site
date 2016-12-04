@@ -64,7 +64,7 @@ left: auto;
 right: auto;
 }
 .carousel-caption h3 {
-color: black !important;
+color: black;
 }
 </style>
 </head>
