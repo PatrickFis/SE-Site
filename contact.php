@@ -38,7 +38,7 @@ background-color: #999;
 background-color: rgba(70,70,70,.25);
 }
 .carousel-control {
-  top: 50%;
+  /*top: 50%;*/
 }
 .carousel-control.left, .carousel-control.right {
   background: none;
@@ -46,11 +46,9 @@ background-color: rgba(70,70,70,.25);
   border: none;
 }
 .carousel-control.left {
-  margin-left: -45px;
   color: black;
 }
 .carousel-control.right {
-  margin-right: -45px;
   color: black;
 }
 .carousel-indicators .active {
