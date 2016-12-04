@@ -113,6 +113,23 @@ right: auto;
       <br>
       <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
         <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <?php
+          $qry = mysql_query("SELECT * FROM contact");
+          $flag = 1;
+          $count = 1;
+          while($row = mysql_fetch_array($qry)) {
+            if($flag == 1) {
+              echo '<li data-target="#myCarousel" data-slide-to="0" class="active"></li>';
+              $flag = 0;
+            }
+            else {
+              echo "<li data-target='#myCarousel' data-slide-to='$count'></li>";
+              $count = $count + 1;
+            }
+          }
+         ?>
+         </ol>
         <!-- <ol class="carousel-indicators">
           <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
           <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -168,14 +185,6 @@ right: auto;
             <img src="img/leadership_shirt.jpg" alt="shirt" width="460" height="345">
           </div> -->
         </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
     </div>
 </body>
