@@ -73,7 +73,7 @@ if(isset($_SESSION['user'])) {
       </div>
     </nav>
 
-
+    <div class="container">
     <!-- PHP code to create the nav-tabs -->
     <?php
       $selectQuery = "SELECT * FROM sponsors";
@@ -124,6 +124,7 @@ if(isset($_SESSION['user'])) {
       }
       echo "</div></div>";
      ?>
+   </div>
   <!-- Footer here, can add this to other pages later. -->
   <br><br><br>
   <div class="navbar navbar-default navbar-fixed-bottom">
