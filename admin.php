@@ -163,7 +163,7 @@ if($adminRow['idadmin'] == "") {
             <br><br><br>
             <form action = "adminScripts/announceStopDisplay.php" method = "post">
             <div class="form-group">
-              <button type="submit" class="btn btn-block btn-primary" name="submit">Stop Displaying Current Announcement</button>
+              <button type="submit" class="btn btn-block btn-primary" name="stop-display">Stop Displaying Current Announcement</button>
             </div>
           </form>
 

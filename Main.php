@@ -72,18 +72,25 @@ if(isset($_SESSION['user'])) {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-    <div class="container">
-      <div class="alert alert-info alert-dismissable fade in">
-        <h3>Announcements</h3>
-        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-        <?php
+    <?php
+    //checks to see if announcement should be posted
+    $str = 'no announce';
+    $qry = "SELECT announce FROM announcements WHERE idannouncements = 0";
+    $res = mysql_query($qry);
+    if(strcmp($res,$str) != 0)
+    {
+  echo '<div class="container">';
+      echo '<div class="alert alert-info alert-dismissable fade in">';
+      echo  '<h3>Announcements</h3>';
+        echo '<a href="#"' 'class="close" data-dismiss="alert"' 'aria-label="close">&times;' '</a>';
             $announcementQuery = "SELECT announce FROM announcements WHERE idannouncements=0";
             $result = mysql_query($announcementQuery);
             while($annRow = mysql_fetch_array($result)) {
               echo $annRow['announce'];
             }
-         ?>
-      </div>
+      echo '</div>';
+    }
+             ?>
 
 
 <!-- This will display information about the objectives, program, and purpose of the program. -->
