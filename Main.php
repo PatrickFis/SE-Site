@@ -72,6 +72,7 @@ if(isset($_SESSION['user'])) {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+    <div class="container">
     <?php
     //checks to see if announcement should be posted
       $str = 'no announce';
@@ -80,12 +81,10 @@ if(isset($_SESSION['user'])) {
       $resString = mysql_fetch_array($res)['announce'];
       if(strcmp($resString,$str) != 0)
       {
-        echo '<div class="container">';
         echo '<div class="alert alert-info alert-dismissable fade in">';
         echo '<h3>Announcements</h3>';
         echo '<a href="#" class="close" data-dismiss="alert" aria-label="close"> </a>';
         echo '<p>'.$resString.'</p>';
-        echo '</div>';
         echo '</div>';
       }
       ?>
@@ -162,6 +161,7 @@ if(isset($_SESSION['user'])) {
       </div>
     </div>
   </div>
+</div>
   <!-- Footer here, can add this to other pages later. -->
   <br><br><br>
   <div class="navbar navbar-default navbar-fixed-bottom">
