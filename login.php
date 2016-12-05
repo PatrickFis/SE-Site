@@ -228,8 +228,6 @@ $(document).ready(function () {
       </form>
     </div>
 
-  </div>
-</div>
 <div class="container">
   <a href="#" data-target="#pwdModal" data-toggle="modal">Forgot my password</a>
 </div>
@@ -270,6 +268,7 @@ $(document).ready(function () {
     </div>
     </div>
   </div>
+</div>
   <!-- Footer -->
   <div class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
