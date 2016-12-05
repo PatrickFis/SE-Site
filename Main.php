@@ -74,24 +74,21 @@ if(isset($_SESSION['user'])) {
     </nav>
     <?php
     //checks to see if announcement should be posted
-    $str = 'no announce';
-    $qry = "SELECT announce FROM announcements WHERE idannouncements = 0";
-    $res = mysql_query($qry);
-    echo '<p>'.$res.'</p>';
-    if(strcmp($res,$str) !== 0)
-    {
-  echo '<div class="container">';
-      echo '<div class="alert alert-info alert-dismissable fade in">';
-      echo  '<h3>Announcements</h3>';
+      $str = 'no announce';
+      $qry = "SELECT announce FROM announcements WHERE idannouncements = 0";
+      $res = mysql_query($qry);
+      $resString = mysql_fetch_array($res)['announce'];
+      if(strcmp($resString,$str) != 0)
+      {
+        echo '<div class="container">';
+        echo '<div class="alert alert-info alert-dismissable fade in">';
+        echo '<h3>Announcements</h3>';
         echo '<a href="#" class="close" data-dismiss="alert" aria-label="close"> </a>';
-            $announcementQuery = "SELECT announce FROM announcements WHERE idannouncements=0";
-            $result = mysql_query($announcementQuery);
-            while($annRow = mysql_fetch_array($result)) {
-              echo $annRow['announce'];
-            }
-      echo '</div>';
-    }
-             ?>
+        echo '<p>'.$resString.'</p>';
+        echo '</div>';
+        echo '</div>';
+      }
+      ?>
 
 
 <!-- This will display information about the objectives, program, and purpose of the program. -->
