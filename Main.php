@@ -162,7 +162,7 @@ if(isset($_SESSION['user'])) {
   </div>
 </div>
   <!-- Footer here, can add this to other pages later. -->
-  <br><br><br>
+  <br><br><br><br><br>
   <div class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
         <p class="navbar-text pull-left">© 2016 - All rights reserved – Williamson County Chamber Foundation, an affiliate of the Williamson County Chamber of Commerce</p>
