@@ -78,8 +78,10 @@ if($adminRow['idadmin'] == "") {
           <li><a data-toggle="tab" href="#AdminChanger">Account Type Changer</a></li>
           <li><a data-toggle="tab" href="#ClassChanger">Class Editor</a></li>
         </ul>
+
         <div class="col-md-9">
           <div class="tab-content">
+
             <div id="Contact" class="tab-pane fade in active">
               <h3>Contact Editor</h3>
               <form action="adminScripts/contactEditor.php" method="post" enctype="multipart/form-data">
@@ -90,6 +92,8 @@ if($adminRow['idadmin'] == "") {
                   <input class="form-control" id="addr" name="address" placeholder = "Address"></textarea>
                   <input class="form-control" id="phn" name="phone" placeholder="Phone Number"></textarea>
                   <input class="form-control" id="eml" name="email" placeholder="Email"></textarea>
+                </div>
+                <div class="form-group">
                   <button type="submit" class="btn btn-block btn-primary" name="submit">Upload Image</button>
                 </div>
               </form>
@@ -108,11 +112,14 @@ if($adminRow['idadmin'] == "") {
                       }
                      ?>
                   </select>
+                </div>
+                <div class="form-group">
                   <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Contact</button>
                 </div>
               </form>
               <br><br><br>
             </div>
+
             <div id="Sponsor" class="tab-pane fade">
               <form action="adminScripts/sponsorEditor.php" method="post" enctype="multipart/form-data">
                 <h3>Sponsor Editor</h3>
@@ -124,6 +131,8 @@ if($adminRow['idadmin'] == "") {
                   <!-- <div class="input-group"> -->
                     <input class="form-control" type="text" id="spon" name="sideName" placeholder="Sidebar Name">
                   <!-- </div> -->
+                </div>
+                <div class="form-group">
                   <button type="submit" class="btn btn-block btn-primary" name="submit">Upload Image</button>
                 </div>
               </form>
@@ -142,11 +151,14 @@ if($adminRow['idadmin'] == "") {
                         }
                       ?>
                     </select>
+                  </div>
+                  <div class="form-group">
                     <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Sponsor</button>
-                </div>
+                  </div>
               </form>
               <br><br><br>
             </div>
+
             <div id="Announcements" class="tab-pane fade">
               <h3>Announcement Editor</h3>
               <p>Use this editor to create dismissible announcements for the main page of your website.</p>
@@ -162,25 +174,35 @@ if($adminRow['idadmin'] == "") {
             <!--stops displaying the current accouncement-->
             <br><br><br>
             <form action = "adminScripts/announceStopDisplay.php" method = "post">
+<<<<<<< HEAD
             <div class="form-group">
               <button type="submit" class="btn btn-block btn-primary" name="stop-display">Stop Displaying Current Announcement</button>
             </div>
           </form>
 
+=======
+              <div class="form-group">
+                <button type="submit" class="btn btn-block btn-primary" name="submit">Stop Displaying Current Announcement</button>
+              </div>
+            </form>
+>>>>>>> dd979956f78ceb61cfa89028859a730a20c20370
             <br><br><br>
           </div>
+
           <div id="Email" class="tab-pane fade">
             <h3>Newsletter</h3>
             <p>The newsletter is handled by Mail Chimp. Please go to their
             <a href="https://login.mailchimp.com/">website</a> to send the
             newsletter.</p>
           </div>
+
           <div id="Analytics" class="tab-pane fade">
             <h3>Google Analytics</h3>
             <p>Check Google's <a href="https://analytics.google.com/">website</a>
             for website traffic information.</p>
             <br><br><br>
           </div>
+
           <div id="AdminChanger" class="tab-pane fade">
             <h3>Modify Account</h3>
             <p>Use this tool to change account permissions.</p>
@@ -193,8 +215,10 @@ if($adminRow['idadmin'] == "") {
                     <option>Administrator</option>
                     <option>Normal User</option>
                   </select>
+                </div>
+                <div class="form-group">
                   <button type="submit" class="btn btn-block btn-primary" name="submit">Modify Account</button>
-              </div>
+                </div>
             </form>
             <br><br><br>
             <!-- Display current admins in a dropdown panel -->
@@ -219,8 +243,9 @@ if($adminRow['idadmin'] == "") {
                 </div>
               </div>
             </div>
-            <br><br><br>
+          <br><br><br>
           </div>
+
           <div id="ClassChanger" class="tab-pane fade">
             <h3>Class Editor</h3>
             <p>Use this editor to add new members to your class.</p>
@@ -235,7 +260,7 @@ if($adminRow['idadmin'] == "") {
               <div class="form-group">
                 <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
               </div>
-          </form>
+            </form>
           <br><br><br>
           <h3>Delete Class Member</h3>
           <form action="adminScripts/classDeleter.php" method="post">
@@ -251,12 +276,15 @@ if($adminRow['idadmin'] == "") {
                     }
                   ?>
                 </select>
+              </div>
+              <div class="form-group">
                 <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Class Member</button>
-            </div>
+              </div>
           </form>
         </div>
-        </div>
+        
       </div>
+    </div>
       <!-- Footer -->
       <br><br><br>
       <div class="navbar navbar-default navbar-fixed-bottom">
