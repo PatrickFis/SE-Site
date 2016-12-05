@@ -151,7 +151,6 @@ if(isset($_SESSION['user'])) {
         </div>
       </div>
     </div>
-    <br><br><br><br><br>
     <div class="visible-lg visible-md hidden-sm hidden-xs">
       <!-- Hide this on small devices, they can look at the calendar page. -->
       <div class="col-md-3">
