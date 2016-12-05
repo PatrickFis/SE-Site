@@ -174,18 +174,18 @@ if($adminRow['idadmin'] == "") {
             <!--stops displaying the current accouncement-->
             <br><br><br>
             <form action = "adminScripts/announceStopDisplay.php" method = "post">
-<<<<<<< HEAD
+
             <div class="form-group">
               <button type="submit" class="btn btn-block btn-primary" name="stop-display">Stop Displaying Current Announcement</button>
             </div>
           </form>
 
-=======
+
               <div class="form-group">
                 <button type="submit" class="btn btn-block btn-primary" name="submit">Stop Displaying Current Announcement</button>
               </div>
             </form>
->>>>>>> dd979956f78ceb61cfa89028859a730a20c20370
+
             <br><br><br>
           </div>
 
@@ -282,7 +282,7 @@ if($adminRow['idadmin'] == "") {
               </div>
           </form>
         </div>
-        
+
       </div>
     </div>
       <!-- Footer -->
