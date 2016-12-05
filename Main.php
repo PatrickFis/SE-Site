@@ -77,7 +77,8 @@ if(isset($_SESSION['user'])) {
     $str = 'no announce';
     $qry = "SELECT announce FROM announcements WHERE idannouncements = 0";
     $res = mysql_query($qry);
-    if(strcmp($res,$str) != 0)
+    echo '<p>'.$res.'</p>';
+    if(strcmp($res,$str) !== 0)
     {
   echo '<div class="container">';
       echo '<div class="alert alert-info alert-dismissable fade in">';
