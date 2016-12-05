@@ -91,76 +91,76 @@ if(isset($_SESSION['user'])) {
 
 
 <!-- This will display information about the objectives, program, and purpose of the program. -->
-<div class="row">
-    <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
-      <li class="active"><a data-toggle="tab" href="#Objectives">Objectives</a></li>
-      <li><a data-toggle="tab" href="#Program">Program</a></li>
-      <li><a data-toggle="tab" href="#Purpose">Purpose</a></li>
-      <li><a data-toggle="tab" href="#FAQ">FAQ/Brochure</a></li>
-      <li><a data-toggle="tab" href="#Class">Class Members</a></li>
-    </ul>
-    <div class="col-md-6">
-      <div class="tab-content">
-        <div id="Objectives" class="tab-pane fade in active">
-          <h3>Objectives</h3>
-          <ul>
-            <li>Provide an educational format which allows leaders to enhance their leadership abilities through exposure to and understanding of all aspects of the  Brentwood community.</li>
-            <li>Promote a free exchange of ideas and concerns among the various segments of Brentwood.</li>
-            <li>Foster an attitude of increased participation and commitment within the community.</li>
-            <li>Identify leaders from the civic, educational, government, religious and business communities who will use their leadership knowledge, skills and abilities for the long-term benefit of the  Brentwood community.</li>
+      <div class="row">
+          <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
+            <li class="active"><a data-toggle="tab" href="#Objectives">Objectives</a></li>
+            <li><a data-toggle="tab" href="#Program">Program</a></li>
+            <li><a data-toggle="tab" href="#Purpose">Purpose</a></li>
+            <li><a data-toggle="tab" href="#FAQ">FAQ/Brochure</a></li>
+            <li><a data-toggle="tab" href="#Class">Class Members</a></li>
           </ul>
-        </div>
-        <div id="Program" class="tab-pane fade">
-          <h3>Program</h3>
-          <p>The Leadership Brentwood program is sponsored by the Williamson County Chamber Foundation, the non-profit arm of the  Williamson, Inc. Chamber of Commerce.
+          <div class="col-md-6">
+            <div class="tab-content">
+              <div id="Objectives" class="tab-pane fade in active">
+                <h3>Objectives</h3>
+                <ul>
+                  <li>Provide an educational format which allows leaders to enhance their leadership abilities through exposure to and understanding of all aspects of the  Brentwood community.</li>
+                  <li>Promote a free exchange of ideas and concerns among the various segments of Brentwood.</li>
+                  <li>Foster an attitude of increased participation and commitment within the community.</li>
+                  <li>Identify leaders from the civic, educational, government, religious and business communities who will use their leadership knowledge, skills and abilities for the long-term benefit of the  Brentwood community.</li>
+                </ul>
+              </div>
+              <div id="Program" class="tab-pane fade">
+                <h3>Program</h3>
+                <p>The Leadership Brentwood program is sponsored by the Williamson County Chamber Foundation, the non-profit arm of the  Williamson, Inc. Chamber of Commerce.
 
-              The program consists of daylong seminars, group discussions, field trips and retreats that address different issues in the Brentwood and surrounding areas. The sessions create a forum to exchange ideas and discuss areas of interest. Each participant will be involved in a small group project outside of the program schedule to leave a legacy for the community.
+                    The program consists of daylong seminars, group discussions, field trips and retreats that address different issues in the Brentwood and surrounding areas. The sessions create a forum to exchange ideas and discuss areas of interest. Each participant will be involved in a small group project outside of the program schedule to leave a legacy for the community.
 
-              The program offers individuals the opportunity to become involved and to make a difference in Brentwood and in Williamson County.
+                    The program offers individuals the opportunity to become involved and to make a difference in Brentwood and in Williamson County.
 
-              The daylong programs include a focus on history, education, business, economic development, media/entertainment, government and quality of life.
+                    The daylong programs include a focus on history, education, business, economic development, media/entertainment, government and quality of life.
 
-              Participants are also given the opportunity to network and develop relationships with other class members and community leaders.
-          </p>
-        </div>
-        <div id="Purpose" class="tab-pane fade">
-          <h3>Purpose</h3>
-          <p>To identify and educate present and future leaders and integrate them into the Brentwood community.</p>
-        </div>
-        <div id="FAQ" class="tab-pane fade">
-          <h3>FAQ/Brochure</h3>
-          <p>Our brochure can be accessed by clicking this <a href="http://www.leadershipbrentwood.org/lead-brent/index_12_3305950585.pdf">link</a>.</p>
-        </div>
-        <div id="Class" class="tab-pane fade">
-          <!--  Display each member in this year's class -->
-          <?php
-              $classQuery = "SELECT * FROM classMembers";
-              $result = mysql_query($classQuery);
-              $flag = 1;
-              while($classRow = mysql_fetch_array($result)) {
-                if($flag == 1) {
-                  echo '<h3>Class of '.$classRow['year'].'</h3>';
-                  echo '<p>'.$classRow['name'].', '.$classRow['company'].', '.$classRow['title'].'</p>';
-                  $flag = 0;
-                }
-                else {
-                  echo '<p>'.$classRow['name'].', '.$classRow['company'].', '.$classRow['title'].'</p>';
-                }
-              }
-           ?>
+                    Participants are also given the opportunity to network and develop relationships with other class members and community leaders.
+                </p>
+              </div>
+              <div id="Purpose" class="tab-pane fade">
+                <h3>Purpose</h3>
+                <p>To identify and educate present and future leaders and integrate them into the Brentwood community.</p>
+              </div>
+              <div id="FAQ" class="tab-pane fade">
+                <h3>FAQ/Brochure</h3>
+                <p>Our brochure can be accessed by clicking this <a href="http://www.leadershipbrentwood.org/lead-brent/index_12_3305950585.pdf">link</a>.</p>
+              </div>
+              <div id="Class" class="tab-pane fade">
+                <!--  Display each member in this year's class -->
+                <?php
+                    $classQuery = "SELECT * FROM classMembers";
+                    $result = mysql_query($classQuery);
+                    $flag = 1;
+                    while($classRow = mysql_fetch_array($result)) {
+                      if($flag == 1) {
+                        echo '<h3>Class of '.$classRow['year'].'</h3>';
+                        echo '<p>'.$classRow['name'].', '.$classRow['company'].', '.$classRow['title'].'</p>';
+                        $flag = 0;
+                      }
+                      else {
+                        echo '<p>'.$classRow['name'].', '.$classRow['company'].', '.$classRow['title'].'</p>';
+                      }
+                    }
+                 ?>
+              </div>
+            </div>
+          </div>
+          <div class="visible-lg visible-md hidden-sm hidden-xs">
+            <!-- Hide this on small devices, they can look at the calendar page. -->
+            <div class="col-md-3">
+              <!--  Small agenda style calendar to the right of the nav-tabs. -->
+              <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&title=Brentwood%20Leadership&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=America%2FChicago" style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>
+              <br><br><br><br><br>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="visible-lg visible-md hidden-sm hidden-xs">
-      <!-- Hide this on small devices, they can look at the calendar page. -->
-      <div class="col-md-3">
-        <!--  Small agenda style calendar to the right of the nav-tabs. -->
-        <iframe src="https://calendar.google.com/calendar/embed?src=brentwoodcalendar2016%40gmail.com&title=Brentwood%20Leadership&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;mode=AGENDA&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=America%2FChicago" style="border-width:0" width="300" height="300" frameborder="0" scrolling="no"></iframe>
-        <br><br><br><br><br>
-      </div>
-    </div>
-  </div>
-</div>
   <!-- Footer here, can add this to other pages later. -->
   <br><br><br><br><br>
   <div class="navbar navbar-default navbar-fixed-bottom">
