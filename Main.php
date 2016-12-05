@@ -83,7 +83,7 @@ if(isset($_SESSION['user'])) {
       {
         echo '<div class="alert alert-info alert-dismissable fade in">';
         echo '<h3>Announcements</h3>';
-        echo '<a href="#" class="close" data-dismiss="alert" aria-label="close"> </a>';
+        echo '<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>';
         echo '<p>'.$resString.'</p>';
         echo '</div>';
       }
