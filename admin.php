@@ -290,4 +290,3 @@ if($adminRow['idadmin'] == "") {
 </body>
 </html>
 <?php ob_end_flush(); ?>
- 
