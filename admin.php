@@ -68,7 +68,11 @@ if($adminRow['idadmin'] == "") {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+<<<<<<< HEAD
 
+=======
+      <div class="container">
+>>>>>>> a3b892fd0b251912597cb85424c2454b63f79d0f
         <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
           <li class="active"><a data-toggle="tab" href="#Contact">Contact Editor</a></li>
           <li><a data-toggle="tab" href="#Sponsor">Sponsor Editor</a></li>
@@ -179,7 +183,11 @@ if($adminRow['idadmin'] == "") {
               <button type="submit" class="btn btn-block btn-primary" name="stop-display">Stop Displaying Current Announcement</button>
             </div>
           </form>
+<<<<<<< HEAD
           
+=======
+
+>>>>>>> a3b892fd0b251912597cb85424c2454b63f79d0f
             <br><br><br>
           </div>
 
@@ -279,6 +287,10 @@ if($adminRow['idadmin'] == "") {
 
       </div>
     </div>
+<<<<<<< HEAD
+=======
+  </div>
+>>>>>>> a3b892fd0b251912597cb85424c2454b63f79d0f
       <!-- Footer -->
       <br><br><br>
       <div class="navbar navbar-default navbar-fixed-bottom">
