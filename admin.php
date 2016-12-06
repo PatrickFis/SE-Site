@@ -69,6 +69,8 @@ if($adminRow['idadmin'] == "") {
       </div>
     </nav>
 
+      <div class="container">
+    <!-- This will display information about the objectives, program, and purpose of the program. -->
         <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
           <li class="active"><a data-toggle="tab" href="#Contact">Contact Editor</a></li>
           <li><a data-toggle="tab" href="#Sponsor">Sponsor Editor</a></li>
@@ -76,50 +78,24 @@ if($adminRow['idadmin'] == "") {
           <li><a data-toggle="tab" href="#Email">Newsletter</a></li>
           <li><a data-toggle="tab" href="#Analytics">Google Analytics</a></li>
           <li><a data-toggle="tab" href="#AdminChanger">Account Type Changer</a></li>
-          <li><a data-toggle="tab" href="#ClassChanger">Class Editor</a></li>
         </ul>
-
         <div class="col-md-9">
           <div class="tab-content">
-
             <div id="Contact" class="tab-pane fade in active">
               <h3>Contact Editor</h3>
               <form action="adminScripts/contactEditor.php" method="post" enctype="multipart/form-data">
                 Select image to upload:
                 <div class="form-group">
                   <input type="file" name="fileToUpload" id="fileToUpload">
-                  <input class="form-control" id="cap" name="caption" placeholder="Image Caption"></textarea>
-                  <input class="form-control" id="addr" name="address" placeholder = "Address"></textarea>
-                  <input class="form-control" id="phn" name="phone" placeholder="Phone Number"></textarea>
-                  <input class="form-control" id="eml" name="email" placeholder="Email"></textarea>
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-block btn-primary" name="submit">Upload Image</button>
-                </div>
-              </form>
-              <br><br><br>
-              <h3>Delete Contact</h3>
-              <form action="adminScripts/contactDeleter.php" method="post">
-                <p>Use this to delete a contact from the page.</p>
-                <div class="form-group">
-                  <label for="selectContact">Select Contact</label>
-                  <select class="form-control" id="selectContact" name="selCon">
-                    <?php
-                      $populateQuery = "SELECT * FROM contact";
-                      $res = mysql_query($populateQuery);
-                      while($row = mysql_fetch_array($res)) {
-                        echo '<option>'.$row['caption'].'</option>';
-                      }
-                     ?>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Contact</button>
+                  <textarea class="form-control" rows="1" id="cap" name="caption"></textarea>
+                  <textarea class="form-control" rows="1" id="addr" name="address"></textarea>
+                  <textarea class="form-control" rows="1" id="phn" name="phone"></textarea>
+                  <textarea class="form-control" rows="1" id="eml" name="email"></textarea>
+                  <input type="submit" value="Upload Image" name="submit">
                 </div>
               </form>
               <br><br><br>
             </div>
-
             <div id="Sponsor" class="tab-pane fade">
               <form action="adminScripts/sponsorEditor.php" method="post" enctype="multipart/form-data">
                 <h3>Sponsor Editor</h3>
@@ -131,9 +107,7 @@ if($adminRow['idadmin'] == "") {
                   <!-- <div class="input-group"> -->
                     <input class="form-control" type="text" id="spon" name="sideName" placeholder="Sidebar Name">
                   <!-- </div> -->
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-block btn-primary" name="submit">Upload Image</button>
+                  <input type="submit" value="Upload Image" name="submit">
                 </div>
               </form>
               <br><br><br>
@@ -141,7 +115,7 @@ if($adminRow['idadmin'] == "") {
               <form action="adminScripts/sponsorDeleter.php" method="post">
                 <p>Use this to delete a sponsor from the page.</p>
                 <div class="form-group">
-                  <label for="selectImage">Select Sponsor</label>
+                  <label for="selectImage">Select Image</label>
                     <select class="form-control" id="selectImage" name="selImg">
                       <?php
                         $populateQuery = "SELECT * FROM sponsors";
@@ -151,14 +125,11 @@ if($adminRow['idadmin'] == "") {
                         }
                       ?>
                     </select>
-                  </div>
-                  <div class="form-group">
-                    <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Sponsor</button>
-                  </div>
+                    <input type="submit" value="Delete">
+                </div>
               </form>
               <br><br><br>
             </div>
-
             <div id="Announcements" class="tab-pane fade">
               <h3>Announcement Editor</h3>
               <p>Use this editor to create dismissible announcements for the main page of your website.</p>
@@ -171,32 +142,20 @@ if($adminRow['idadmin'] == "") {
                   <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
                 </div>
             </form>
-            <!--stops displaying the current accouncement-->
-            <br><br><br>
-
-            <form action = "adminScripts/announceStopDisplay.php" method = "post">
-            <div class="form-group">
-              <button type="submit" class="btn btn-block btn-primary" name="stop-display">Stop Displaying Current Announcement</button>
-            </div>
-          </form>
-          
             <br><br><br>
           </div>
-
           <div id="Email" class="tab-pane fade">
             <h3>Newsletter</h3>
             <p>The newsletter is handled by Mail Chimp. Please go to their
             <a href="https://login.mailchimp.com/">website</a> to send the
             newsletter.</p>
           </div>
-
           <div id="Analytics" class="tab-pane fade">
             <h3>Google Analytics</h3>
             <p>Check Google's <a href="https://analytics.google.com/">website</a>
             for website traffic information.</p>
             <br><br><br>
           </div>
-
           <div id="AdminChanger" class="tab-pane fade">
             <h3>Modify Account</h3>
             <p>Use this tool to change account permissions.</p>
@@ -209,10 +168,8 @@ if($adminRow['idadmin'] == "") {
                     <option>Administrator</option>
                     <option>Normal User</option>
                   </select>
-                </div>
-                <div class="form-group">
-                  <button type="submit" class="btn btn-block btn-primary" name="submit">Modify Account</button>
-                </div>
+                  <input type="submit" value="Modify Account">
+              </div>
             </form>
             <br><br><br>
             <!-- Display current admins in a dropdown panel -->
@@ -237,55 +194,10 @@ if($adminRow['idadmin'] == "") {
                 </div>
               </div>
             </div>
-          <br><br><br>
           </div>
-
-          <div id="ClassChanger" class="tab-pane fade">
-            <h3>Class Editor</h3>
-            <p>Use this editor to add new members to your class.</p>
-            <form action="adminScripts/classEditor.php" method="post">
-              <div class="form-group">
-                <label for="name">Add a new class member:</label>
-                <input class="form-control" type="text" id="name" name="name" placeholder="Name">
-                <input class="form-control" type="text" id="company" name="company" placeholder="Company">
-                <input class="form-control" type="text" id="title" name="title" placeholder="Title">
-                <input class="form-control" type="text" id="year" name="year" placeholder="Year">
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-block btn-primary" name="btn-announce">Submit</button>
-              </div>
-            </form>
-          <br><br><br>
-          <h3>Delete Class Member</h3>
-          <form action="adminScripts/classDeleter.php" method="post">
-            <p>Use this to delete a class member.</p>
-            <div class="form-group">
-              <label for="selectClass">Select Class Member</label>
-                <select class="form-control" id="selectClass" name="selCls">
-                  <?php
-                    $populateQuery = "SELECT * FROM classMembers";
-                    $res = mysql_query($populateQuery);
-                    while($row = mysql_fetch_array($res)) {
-                      echo '<option>'.$row['name'].'</option>';
-                    }
-                  ?>
-                </select>
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Class Member</button>
-              </div>
-          </form>
         </div>
-
       </div>
     </div>
-      <!-- Footer -->
-      <br><br><br>
-      <div class="navbar navbar-default navbar-fixed-bottom">
-          <div class="container">
-            <p class="navbar-text pull-left">© 2016 - All rights reserved – Williamson County Chamber Foundation, an affiliate of the Williamson County Chamber of Commerce</p>
-          </div>
-      </div>
 </body>
 </html>
 <?php ob_end_flush(); ?>
