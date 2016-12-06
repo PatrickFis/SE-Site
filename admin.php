@@ -68,7 +68,7 @@ if($adminRow['idadmin'] == "") {
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-
+      <div class="container">
         <ul class="nav nav-tabs-no-style nav-stacked col-md-3">
           <li class="active"><a data-toggle="tab" href="#Contact">Contact Editor</a></li>
           <li><a data-toggle="tab" href="#Sponsor">Sponsor Editor</a></li>
@@ -179,7 +179,7 @@ if($adminRow['idadmin'] == "") {
               <button type="submit" class="btn btn-block btn-primary" name="stop-display">Stop Displaying Current Announcement</button>
             </div>
           </form>
-          
+
             <br><br><br>
           </div>
 
@@ -279,6 +279,7 @@ if($adminRow['idadmin'] == "") {
 
       </div>
     </div>
+  </div>
       <!-- Footer -->
       <br><br><br>
       <div class="navbar navbar-default navbar-fixed-bottom">
