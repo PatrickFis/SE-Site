@@ -73,7 +73,6 @@ if(isset($_SESSION['user'])) {
       </div>
     </nav>
     <div class="container">
-    <img src="leadership-header.jpg" alt="header">
     <?php
     //checks to see if announcement should be posted
       $str = 'no announce';
