@@ -274,6 +274,7 @@ if($adminRow['idadmin'] == "") {
               <div class="form-group">
                 <button type="submit" class="btn btn-block btn-primary" name="submit">Delete Class Member</button>
               </div>
+              <br><br><br>
           </form>
         </div>
 
