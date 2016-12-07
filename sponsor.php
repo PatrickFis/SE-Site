@@ -135,8 +135,6 @@ if(isset($_SESSION['user'])) {
 
 
 
-    <script src="assets/jquery-1.11.3-jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
 
   </body>
   </html>

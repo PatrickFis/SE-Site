@@ -171,12 +171,6 @@ if(isset($_SESSION['user'])) {
         <p class="navbar-text pull-left">© 2016 - All rights reserved – Williamson County Chamber Foundation, an affiliate of the Williamson County Chamber of Commerce</p>
       </div>
   </div>
-
-
-
-    <script src="assets/jquery-1.11.3-jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
   </body>
   </html>
   <?php ob_end_flush(); ?>
