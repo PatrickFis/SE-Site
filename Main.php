@@ -73,6 +73,9 @@ if(isset($_SESSION['user'])) {
       </div>
     </nav>
     <div class="container">
+      <div class="page-header">
+        <h1>Brentwood Leadership Foundation</h1>
+      </div>
     <?php
     //checks to see if announcement should be posted
       $str = 'no announce';
